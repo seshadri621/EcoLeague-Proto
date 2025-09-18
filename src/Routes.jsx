@@ -9,6 +9,7 @@ import QuestMap from './pages/quest-map';
 import LearningArena from './pages/learning-arena';
 import MissionControlDashboard from './pages/mission-control-dashboard';
 import CommunityImpactHub from './pages/community-impact-hub';
+import Profile from './pages/Profile';
 
 const Routes = () => {
   return (
@@ -24,6 +25,7 @@ const Routes = () => {
         <Route path="/quest-map" element={<QuestMap />} />
         <Route path="/learning-arena" element={<LearningArena />} />
         <Route path="/community-impact-hub" element={<CommunityImpactHub />} />
+        <Route path="/profile" element={<Profile />} />
         <Route path="*" element={<NotFound />} />
       </RouterRoutes>
       </ErrorBoundary>

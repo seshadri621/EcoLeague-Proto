@@ -2,10 +2,22 @@ import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import Icon from '../AppIcon';
 import Button from './Button';
+import { auth } from '../../../public/firebase';
+import { signOut } from 'firebase/auth';
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
+
+  const handleLogout = async () => {
+    try {
+      await signOut(auth);
+      window.location.href = '/login.html';
+    } catch (error) {
+      console.error("Logout Error:", error);
+      alert('Failed to log out. Please try again.');
+    }
+  };
 
   const navigationItems = [
     { name: 'Mission Control', path: '/mission-control-dashboard', icon: 'Compass' },
@@ -119,6 +131,10 @@ const Header = () => {
                     <p className="font-body font-medium text-text-primary">Environmental Hero</p>
                     <p className="text-sm text-text-secondary">Level 5 Explorer</p>
                   </div>
+                  <Link to="/profile" className="flex items-center space-x-3 w-full px-4 py-2 text-left organic-transition font-body text-text-secondary hover:text-forest hover:bg-forest-gradient/30">
+                    <Icon name="User" size={16} />
+                    <span>Profile</span>
+                  </Link>
                   <button className="flex items-center space-x-3 w-full px-4 py-2 text-left organic-transition font-body text-text-secondary hover:text-forest hover:bg-forest-gradient/30">
                     <Icon name="Settings" size={16} />
                     <span>Settings</span>
@@ -127,7 +143,7 @@ const Header = () => {
                     <Icon name="HelpCircle" size={16} />
                     <span>Help</span>
                   </button>
-                  <button className="flex items-center space-x-3 w-full px-4 py-2 text-left organic-transition font-body text-text-secondary hover:text-error hover:bg-red-50">
+                  <button onClick={handleLogout} className="flex items-center space-x-3 w-full px-4 py-2 text-left organic-transition font-body text-text-secondary hover:text-error hover:bg-red-50">
                     <Icon name="LogOut" size={16} />
                     <span>Sign Out</span>
                   </button>
