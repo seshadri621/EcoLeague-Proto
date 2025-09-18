@@ -12,7 +12,7 @@ const SuccessStories = () => {
       title: "From Polluted Creek to Thriving Ecosystem",
       hero: {
         name: "Maria Gonzalez",
-        avatar: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=150",
+        avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150",
         age: 22,
         location: "Austin, Texas",
         level: "Environmental Champion"
@@ -125,7 +125,7 @@ const SuccessStories = () => {
   return (
     <div className="space-y-6">
       {/* Monthly Spotlight */}
-      <div className="bg-gradient-to-br from-achievement/10 to-orange-100 rounded-eco-lg border border-achievement/20 overflow-hidden">
+      <div className="bg-card rounded-eco-lg border border-border overflow-hidden">
         <div className="p-6">
           <div className="flex items-center justify-between mb-6">
             <div>
@@ -152,7 +152,7 @@ const SuccessStories = () => {
                     className="w-16 h-16 rounded-full object-cover"
                     fallbackSrc="/assets/images/no_image.png"
                   />
-                  <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-gradient-to-br from-achievement to-orange-600 rounded-full flex items-center justify-center achievement-glow">
+                  <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-achievement rounded-full flex items-center justify-center achievement-glow">
                     <Icon name="Crown" size={16} color="white" />
                   </div>
                 </div>
@@ -224,29 +224,29 @@ const SuccessStories = () => {
         </div>
       </div>
       {/* Impact Overview */}
-      <div className="bg-white rounded-eco-lg shadow-eco-sm border border-border p-6">
+      <div className="bg-card rounded-eco-lg shadow-eco-sm border border-border p-6">
         <h3 className="text-lg font-headline font-semibold text-text-primary mb-4">Community Impact Overview</h3>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          <div className="text-center p-4 bg-forest-gradient/10 rounded-eco-md">
+          <div className="text-center p-4 bg-background rounded-eco-md">
             <p className="text-2xl font-headline font-bold text-forest">{impactMetrics?.totalStories}</p>
             <p className="text-sm text-text-secondary font-body">Success Stories</p>
           </div>
-          <div className="text-center p-4 bg-ocean-gradient/10 rounded-eco-md">
+          <div className="text-center p-4 bg-background rounded-eco-md">
             <p className="text-2xl font-headline font-bold text-ocean">{impactMetrics?.totalVolunteers}</p>
             <p className="text-sm text-text-secondary font-body">Volunteers Mobilized</p>
           </div>
-          <div className="text-center p-4 bg-achievement-gradient/10 rounded-eco-md">
+          <div className="text-center p-4 bg-background rounded-eco-md">
             <p className="text-2xl font-headline font-bold text-achievement">{impactMetrics?.communitiesImpacted}</p>
             <p className="text-sm text-text-secondary font-body">Communities Impacted</p>
           </div>
-          <div className="text-center p-4 bg-success/10 rounded-eco-md">
+          <div className="text-center p-4 bg-background rounded-eco-md">
             <p className="text-xs font-headline font-bold text-success leading-tight">{impactMetrics?.totalImpact}</p>
             <p className="text-sm text-text-secondary font-body">Environmental Impact</p>
           </div>
         </div>
       </div>
       {/* All Success Stories */}
-      <div className="bg-white rounded-eco-lg shadow-eco-sm border border-border">
+      <div className="bg-card rounded-eco-lg shadow-eco-sm border border-border">
         <div className="p-6 border-b border-border">
           <div className="flex items-center justify-between">
             <div>
@@ -312,7 +312,7 @@ const SuccessStories = () => {
 
                   <div className="flex flex-wrap gap-1 mb-3">
                     {story?.achievements?.slice(0, 2)?.map((achievement, index) => (
-                      <span key={index} className="px-2 py-1 bg-forest-gradient/20 text-forest text-xs rounded-eco-sm font-body">
+                      <span key={index} className="px-2 py-1 bg-background text-forest text-xs rounded-eco-sm font-body">
                         {achievement}
                       </span>
                     ))}
@@ -335,7 +335,7 @@ const SuccessStories = () => {
       {/* Story Modal */}
       {selectedStory && (
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
-          <div className="bg-white rounded-eco-lg max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+          <div className="bg-card rounded-eco-lg max-w-4xl w-full max-h-[90vh] overflow-y-auto">
             <div className="p-6 border-b border-border">
               <div className="flex items-center justify-between">
                 <h2 className="text-xl font-headline font-bold text-text-primary">{selectedStory?.title}</h2>

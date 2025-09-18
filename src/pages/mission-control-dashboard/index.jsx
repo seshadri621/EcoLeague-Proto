@@ -278,7 +278,7 @@ const MissionControlDashboard = () => {
         />
       </main>
       {/* Footer */}
-      <footer className="bg-forest text-white py-8">
+      <footer className="bg-forest text-primary-foreground py-8">
         <div className="max-w-7xl mx-auto px-4 lg:px-6 text-center">
           <p className="font-body">
             &copy; {new Date()?.getFullYear()} EcoQuest. Empowering environmental heroes worldwide.
