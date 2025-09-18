@@ -26,9 +26,9 @@ const SuccessStories = () => {
         wasteRemoved: "2,000 lbs"
       },
       images: [
-        "https://images.pexels.com/photos/2547565/pexels-photo-2547565.jpeg?w=400",
-        "https://images.pexels.com/photos/1000445/pexels-photo-1000445.jpeg?w=400",
-        "https://images.pixabay.com/photo/2016/11/29/05/45/astronomy-1867616_1280.jpg?w=400"
+        "/assets/images/no_image.png",
+        "/assets/images/no_image.png",
+        "/assets/images/no_image.png"
       ],
       videoUrl: "https://example.com/maria-story",
       achievements: ["Water Guardian", "Community Leader", "Ecosystem Restorer"],
@@ -54,8 +54,8 @@ const SuccessStories = () => {
         treesPlanted: "500+"
       },
       images: [
-        "https://images.pixabay.com/photo/2015/12/01/20/28/road-1072821_1280.jpg?w=400",
-        "https://images.pexels.com/photos/326055/pexels-photo-326055.jpeg?w=400"
+        "/assets/images/no_image.png",
+        "/assets/images/no_image.png"
       ],
       videoUrl: "https://example.com/james-story",
       achievements: ["Tree Planter", "Air Quality Advocate", "Urban Forester"],
@@ -81,7 +81,7 @@ const SuccessStories = () => {
         wasteReduced: "15 tons"
       },
       images: [
-        "https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?w=400"
+        "/assets/images/no_image.png"
       ],
       videoUrl: "https://example.com/sarah-story",
       achievements: ["Zero Waste Champion", "Policy Influencer", "Education Leader"],
@@ -150,6 +150,7 @@ const SuccessStories = () => {
                     src={monthlySpotlight?.hero?.hero?.avatar}
                     alt={monthlySpotlight?.hero?.hero?.name}
                     className="w-16 h-16 rounded-full object-cover"
+                    fallbackSrc="/assets/images/no_image.png"
                   />
                   <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-gradient-to-br from-achievement to-orange-600 rounded-full flex items-center justify-center achievement-glow">
                     <Icon name="Crown" size={16} color="white" />
@@ -204,6 +205,7 @@ const SuccessStories = () => {
                     src={image}
                     alt={`Story image ${index + 1}`}
                     className="w-full h-full object-cover organic-transition hover:scale-105"
+                    fallbackSrc="/assets/images/no_image.png"
                   />
                   {index === 0 && (
                     <div className="absolute top-2 left-2 bg-black/70 text-white px-2 py-1 rounded-eco-sm text-xs font-body">
@@ -266,6 +268,7 @@ const SuccessStories = () => {
                     src={story?.images?.[0]}
                     alt={story?.title}
                     className="w-full h-full object-cover organic-transition hover:scale-105"
+                    fallbackSrc="/assets/images/no_image.png"
                   />
                   <div className="absolute top-4 right-4">
                     <button 
@@ -288,6 +291,7 @@ const SuccessStories = () => {
                       src={story?.hero?.avatar}
                       alt={story?.hero?.name}
                       className="w-10 h-10 rounded-full object-cover"
+                      fallbackSrc="/assets/images/no_image.png"
                     />
                     <div>
                       <h4 className="font-body font-semibold text-text-primary">{story?.hero?.name}</h4>
@@ -351,6 +355,7 @@ const SuccessStories = () => {
                   src={selectedStory?.hero?.avatar}
                   alt={selectedStory?.hero?.name}
                   className="w-16 h-16 rounded-full object-cover"
+                  fallbackSrc="/assets/images/no_image.png"
                 />
                 <div>
                   <h3 className="text-lg font-headline font-bold text-text-primary">{selectedStory?.hero?.name}</h3>
@@ -385,6 +390,7 @@ const SuccessStories = () => {
                       src={image}
                       alt={`Story image ${index + 1}`}
                       className="w-full h-full object-cover"
+                      fallbackSrc="/assets/images/no_image.png"
                     />
                   </div>
                 ))}
