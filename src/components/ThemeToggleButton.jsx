@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { ThemeContext } from '../context/ThemeContext';
-import { Button } from './ui/Button'; // Assuming you have a Button component
+import Button from './ui/Button'; // Assuming you have a Button component
 
 const ThemeToggleButton = () => {
   const { theme, toggleTheme } = useContext(ThemeContext);
