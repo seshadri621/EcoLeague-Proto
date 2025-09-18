@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import Header from '../../components/ui/Header';
+import Tooltip from '../../components/ui/Tooltip';
 
 import Image from '../../components/AppImage';
 import Icon from '../../components/AppIcon';
@@ -12,9 +13,9 @@ const mockUser = {
   totalXP: 2847,
   avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face",
   badges: [
-    { id: 1, name: "Tree Planter", icon: "TreePine", rarity: "rare" },
-    { id: 2, name: "Recycler", icon: "Recycle", rarity: "common" },
-    { id: 3, name: "Beach Cleaner", icon: "Waves", rarity: "epic" },
+    { id: 1, name: "Tree Planter", icon: "TreePine", rarity: "rare", description: "Awarded for planting 100 trees." },
+    { id: 2, name: "Recycler", icon: "Recycle", rarity: "common", description: "Awarded for recycling 500 items." },
+    { id: 3, name: "Beach Cleaner", icon: "Waves", rarity: "epic", description: "Awarded for participating in 5 beach clean-up events." },
   ],
   leaderboard: {
     rank: 5,
@@ -93,12 +94,14 @@ const Profile = () => {
           <h2 className="text-xl font-headline font-semibold text-text-primary mb-4">Recent Badges</h2>
           <div className="flex flex-wrap gap-4">
             {user.badges.map(badge => (
-              <div key={badge.id} className="flex flex-col items-center text-center p-3 rounded-eco-md w-24 env-card-hover">
-                <div className={`w-16 h-16 rounded-full flex items-center justify-center ${getRarityColor(badge.rarity)}`}>
-                  <Icon name={badge.icon} size={32} />
+              <Tooltip content={badge.description}>
+                <div key={badge.id} className="flex flex-col items-center text-center p-3 rounded-eco-md w-24 env-card-hover">
+                  <div className={`w-16 h-16 rounded-full flex items-center justify-center ${getRarityColor(badge.rarity)}`}>
+                    <Icon name={badge.icon} size={32} />
+                  </div>
+                  <span className="mt-2 text-sm text-text-primary font-body font-medium">{badge.name}</span>
                 </div>
-                <span className="mt-2 text-sm text-text-primary font-body font-medium">{badge.name}</span>
-              </div>
+              </Tooltip>
             ))}
           </div>
         </div>

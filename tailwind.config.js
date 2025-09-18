@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
+  darkMode: 'class',
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
@@ -60,7 +61,56 @@ export default {
         action: 'var(--color-action)', // green-600
         surface: 'var(--color-surface)', // gray-100
         'text-primary': 'var(--color-text-primary)', // gray-900
-        'text-secondary': 'var(--color-text-secondary)' // gray-500
+        'text-secondary': 'var(--color-text-secondary)', // gray-500
+
+        // Dark theme colors
+        dark: {
+          border: 'var(--dark-color-border)',
+          input: 'var(--dark-color-input)',
+          ring: 'var(--dark-color-ring)',
+          background: 'var(--dark-color-background)',
+          foreground: 'var(--dark-color-foreground)',
+          primary: {
+            DEFAULT: 'var(--dark-color-primary)',
+            foreground: 'var(--dark-color-primary-foreground)'
+          },
+          secondary: {
+            DEFAULT: 'var(--dark-color-secondary)',
+            foreground: 'var(--dark-color-secondary-foreground)'
+          },
+          destructive: {
+            DEFAULT: 'var(--dark-color-destructive)',
+            foreground: 'var(--dark-color-destructive-foreground)'
+          },
+          muted: {
+            DEFAULT: 'var(--dark-color-muted)',
+            foreground: 'var(--dark-color-muted-foreground)'
+          },
+          accent: {
+            DEFAULT: 'var(--dark-color-accent)',
+            foreground: 'var(--dark-color-accent-foreground)'
+          },
+          popover: {
+            DEFAULT: 'var(--dark-color-popover)',
+            foreground: 'var(--dark-color-popover-foreground)'
+          },
+          card: {
+            DEFAULT: 'var(--dark-color-card)',
+            foreground: 'var(--dark-color-card-foreground)'
+          },
+          success: {
+            DEFAULT: 'var(--dark-color-success)',
+            foreground: 'var(--dark-color-success-foreground)'
+          },
+          warning: {
+            DEFAULT: 'var(--dark-color-warning)',
+            foreground: 'var(--dark-color-warning-foreground)'
+          },
+          error: {
+            DEFAULT: 'var(--dark-color-error)',
+            foreground: 'var(--dark-color-error-foreground)'
+          }
+        }
       },
       fontFamily: {
         'headline': ['Inter', 'sans-serif'],
