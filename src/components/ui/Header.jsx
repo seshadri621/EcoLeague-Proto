@@ -135,10 +135,10 @@ const Header = () => {
                     <Icon name="User" size={16} />
                     <span>Profile</span>
                   </Link>
-                  <button className="flex items-center space-x-3 w-full px-4 py-2 text-left organic-transition font-body text-text-secondary hover:text-forest hover:bg-forest-gradient/30">
+                  <Link to="/settings" className="flex items-center space-x-3 w-full px-4 py-2 text-left organic-transition font-body text-text-secondary hover:text-forest hover:bg-forest-gradient/30">
                     <Icon name="Settings" size={16} />
                     <span>Settings</span>
-                  </button>
+                  </Link>
                   <button className="flex items-center space-x-3 w-full px-4 py-2 text-left organic-transition font-body text-text-secondary hover:text-forest hover:bg-forest-gradient/30">
                     <Icon name="HelpCircle" size={16} />
                     <span>Help</span>

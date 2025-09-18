@@ -10,6 +10,7 @@ import LearningArena from './pages/learning-arena';
 import MissionControlDashboard from './pages/mission-control-dashboard';
 import CommunityImpactHub from './pages/community-impact-hub';
 import Profile from './pages/Profile';
+import Settings from './pages/Settings';
 
 const Routes = () => {
   return (
@@ -26,6 +27,7 @@ const Routes = () => {
         <Route path="/learning-arena" element={<LearningArena />} />
         <Route path="/community-impact-hub" element={<CommunityImpactHub />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/settings" element={<Settings />} />
         <Route path="*" element={<NotFound />} />
       </RouterRoutes>
       </ErrorBoundary>
