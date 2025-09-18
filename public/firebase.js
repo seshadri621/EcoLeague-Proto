@@ -1,17 +1,16 @@
 
 // Import the functions you need from the SDKs you need
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
-import { getAuth } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-app.js";
+import { getAuth } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-auth.js";
 
 // Your web app's Firebase configuration
-// Replace with your actual Firebase configuration
 const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_AUTH_DOMAIN",
-  projectId: "YOUR_PROJECT_ID",
-  storageBucket: "YOUR_STORAGE_BUCKET",
-  messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-  appId: "YOUR_APP_ID"
+  apiKey: "AIzaSyDSESBecXaN_VW9bFG3OxdyBF6CRyoVriM",
+  authDomain: "ecoleague-1d3be.firebaseapp.com",
+  projectId: "ecoleague-1d3be",
+  storageBucket: "ecoleague-1d3be.firebasestorage.app",
+  messagingSenderId: "500835895309",
+  appId: "1:500835895309:web:7da5e62c17befa0e3e6d44"
 };
 
 // Initialize Firebase
