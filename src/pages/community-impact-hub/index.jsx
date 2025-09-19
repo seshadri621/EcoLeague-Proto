@@ -90,7 +90,7 @@ const CommunityImpactHub = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
             <div className="text-center mb-8">
               <div className="flex items-center justify-center space-x-3 mb-4">
-                <div className="w-16 h-16 bg-gradient-to-br from-forest to-ocean rounded-eco-lg flex items-center justify-center mission-pulse">
+                <div className="w-16 h-16 bg-gradient-to-br from-forest to-ocean rounded-eco-lg flex items-center justify-center">
                   <Icon name="Users" size={32} color="white" strokeWidth={2.5} />
                 </div>
                 <div className="text-left">
@@ -126,7 +126,7 @@ const CommunityImpactHub = () => {
               </div>
               <div className="bg-white/70 backdrop-blur-sm rounded-eco-md p-4 text-center border border-white/20">
                 <div className="flex items-center justify-center space-x-1">
-                  <div className="w-2 h-2 bg-success rounded-full animate-pulse"></div>
+                  <div className="w-2 h-2 bg-success rounded-full"></div>
                   <div className="text-2xl font-headline font-bold text-success">{communityStats?.onlineNow}</div>
                 </div>
                 <div className="text-sm text-text-secondary font-body">Online Now</div>
@@ -156,7 +156,7 @@ const CommunityImpactHub = () => {
                 <button
                   key={tab?.key}
                   onClick={() => setActiveTab(tab?.key)}
-                  className={`flex items-center space-x-2 px-4 py-4 border-b-2 font-body font-medium organic-transition whitespace-nowrap ${
+                  className={`flex items-center space-x-2 px-4 py-4 border-b-2 font-body font-medium whitespace-nowrap ${
                     activeTab === tab?.key
                       ? 'border-forest text-forest bg-forest-gradient/5'
                       : 'border-transparent text-text-secondary hover:text-forest hover:bg-forest-gradient/5'
@@ -206,10 +206,10 @@ const CommunityImpactHub = () => {
                 Building a sustainable future through community action
               </p>
               <div className="flex items-center justify-center space-x-6 text-sm text-text-secondary font-body">
-                <button className="hover:text-forest organic-transition">About</button>
-                <button className="hover:text-forest organic-transition">Privacy</button>
-                <button className="hover:text-forest organic-transition">Terms</button>
-                <button className="hover:text-forest organic-transition">Support</button>
+                <button className="hover:text-forest">About</button>
+                <button className="hover:text-forest">Privacy</button>
+                <button className="hover:text-forest">Terms</button>
+                <button className="hover:text-forest">Support</button>
               </div>
               <p className="text-xs text-text-secondary font-body mt-4">
                 © {new Date()?.getFullYear()} EcoQuest. All rights reserved.

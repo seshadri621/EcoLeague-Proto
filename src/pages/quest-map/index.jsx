@@ -439,7 +439,7 @@ const QuestMap = () => {
               style={{ left: '50%', top: '50%' }}
             >
               <div className="w-4 h-4 bg-blue-500 rounded-full border-2 border-white shadow-eco-md">
-                <div className="absolute inset-0 bg-blue-500 rounded-full animate-ping opacity-75"></div>
+                <div className="absolute inset-0 bg-blue-500 rounded-full opacity-75"></div>
               </div>
             </div>
           </div>
