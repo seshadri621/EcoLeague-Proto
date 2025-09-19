@@ -4,7 +4,6 @@ import Icon from '../AppIcon';
 import Button from './Button';
 import { auth } from '../../../public/firebase';
 import { signOut } from 'firebase/auth';
-import ThemeToggleButton from '../ThemeToggleButton';
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -39,7 +38,7 @@ const Header = () => {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 dark:bg-dark-background/95 backdrop-blur-eco border-b border-border dark:border-dark-border">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-eco border-b border-border">
       <div className="w-full">
         <div className="flex items-center justify-between h-16 px-4 lg:px-6">
           {/* Logo Section */}
@@ -54,7 +53,7 @@ const Header = () => {
                 <h1 className="text-xl font-headline font-bold text-gradient-forest">
                   EcoLeague
                 </h1>
-                <p className="text-xs text-text-secondary dark:text-dark-text-secondary font-body">
+                <p className="text-xs text-text-secondary font-body">
                   Environmental Heroes
                 </p>
               </div>
@@ -69,8 +68,8 @@ const Header = () => {
                 to={item?.path}
                 className={`flex items-center space-x-2 px-4 py-2 rounded-eco-sm organic-transition font-body font-medium ${
                   isActivePath(item?.path)
-                    ? 'bg-forest-gradient text-forest dark:text-dark-forest border border-forest/20 dark:border-dark-forest/20'
-                    : 'text-text-secondary dark:text-dark-text-secondary hover:text-forest dark:hover:text-dark-forest hover:bg-forest-gradient/50 dark:hover:bg-dark-forest-gradient/50'
+                    ? 'bg-forest-gradient text-forest border border-forest/20'
+                    : 'text-text-secondary hover:text-forest hover:bg-forest-gradient/50'
                 }`}
               >
                 <Icon name={item?.icon} size={18} />
@@ -80,13 +79,13 @@ const Header = () => {
             
             {/* More Menu */}
             <div className="relative group">
-              <button className="flex items-center space-x-2 px-4 py-2 rounded-eco-sm organic-transition font-body font-medium text-text-secondary dark:text-dark-text-secondary hover:text-forest dark:hover:text-dark-forest hover:bg-forest-gradient/50 dark:hover:bg-dark-forest-gradient/50">
+              <button className="flex items-center space-x-2 px-4 py-2 rounded-eco-sm organic-transition font-body font-medium text-text-secondary hover:text-forest hover:bg-forest-gradient/50">
                 <Icon name="MoreHorizontal" size={18} />
                 <span>More</span>
               </button>
               
               {/* Dropdown Menu */}
-              <div className="absolute right-0 top-full mt-2 w-48 bg-background dark:bg-dark-background rounded-eco-md shadow-eco-lg border border-border dark:border-dark-border opacity-0 invisible group-hover:opacity-100 group-hover:visible organic-transition">
+              <div className="absolute right-0 top-full mt-2 w-48 bg-background rounded-eco-md shadow-eco-lg border border-border opacity-0 invisible group-hover:opacity-100 group-hover:visible organic-transition">
                 <div className="py-2">
                   {secondaryItems?.map((item) => (
                     <Link
@@ -94,8 +93,8 @@ const Header = () => {
                       to={item?.path}
                       className={`flex items-center space-x-3 px-4 py-2 organic-transition font-body ${
                         isActivePath(item?.path)
-                          ? 'bg-forest-gradient text-forest dark:text-dark-forest'
-                          : 'text-text-secondary dark:text-dark-text-secondary hover:text-forest dark:hover:text-dark-forest hover:bg-forest-gradient/30 dark:hover:bg-dark-forest-gradient/30'
+                          ? 'bg-forest-gradient text-forest'
+                          : 'text-text-secondary hover:text-forest hover:bg-forest-gradient/30'
                       }`}
                     >
                       <Icon name={item?.icon} size={16} />
@@ -109,9 +108,8 @@ const Header = () => {
 
           {/* Action Buttons */}
           <div className="flex items-center space-x-3">
-            <ThemeToggleButton />
             {/* Notification Bell */}
-            <button className="relative p-2 rounded-eco-sm organic-transition text-text-secondary dark:text-dark-text-secondary hover:text-forest dark:hover:text-dark-forest hover:bg-forest-gradient/30 dark:hover:bg-dark-forest-gradient/30">
+            <button className="relative p-2 rounded-eco-sm organic-transition text-text-secondary hover:text-forest hover:bg-forest-gradient/30">
               <Icon name="Bell" size={20} />
               <span className="absolute -top-1 -right-1 w-3 h-3 bg-achievement rounded-full flex items-center justify-center">
                 <span className="w-1.5 h-1.5 bg-white rounded-full"></span>
@@ -120,32 +118,32 @@ const Header = () => {
 
             {/* Profile Menu */}
             <div className="relative group">
-              <button className="flex items-center space-x-2 p-1 rounded-eco-sm organic-transition hover:bg-forest-gradient/30 dark:hover:bg-dark-forest-gradient/30">
+              <button className="flex items-center space-x-2 p-1 rounded-eco-sm organic-transition hover:bg-forest-gradient/30">
                 <div className="w-8 h-8 bg-gradient-to-br from-achievement to-orange-600 rounded-full flex items-center justify-center">
                   <Icon name="User" size={16} color="white" />
                 </div>
               </button>
               
               {/* Profile Dropdown */}
-              <div className="absolute right-0 top-full mt-2 w-48 bg-background dark:bg-dark-background rounded-eco-md shadow-eco-lg border border-border dark:border-dark-border opacity-0 invisible group-hover:opacity-100 group-hover:visible organic-transition">
+              <div className="absolute right-0 top-full mt-2 w-48 bg-background rounded-eco-md shadow-eco-lg border border-border opacity-0 invisible group-hover:opacity-100 group-hover:visible organic-transition">
                 <div className="py-2">
-                  <div className="px-4 py-2 border-b border-border dark:border-dark-border">
-                    <p className="font-body font-medium text-text-primary dark:text-dark-text-primary">Environmental Hero</p>
-                    <p className="text-sm text-text-secondary dark:text-dark-text-secondary">Level 5 Explorer</p>
+                  <div className="px-4 py-2 border-b border-border">
+                    <p className="font-body font-medium text-text-primary">Environmental Hero</p>
+                    <p className="text-sm text-text-secondary">Level 5 Explorer</p>
                   </div>
-                  <Link to="/profile" className="flex items-center space-x-3 w-full px-4 py-2 text-left organic-transition font-body text-text-secondary dark:text-dark-text-secondary hover:text-forest dark:hover:text-dark-forest hover:bg-forest-gradient/30 dark:hover:bg-dark-forest-gradient/30">
+                  <Link to="/profile" className="flex items-center space-x-3 w-full px-4 py-2 text-left organic-transition font-body text-text-secondary hover:text-forest hover:bg-forest-gradient/30">
                     <Icon name="User" size={16} />
                     <span>Profile</span>
                   </Link>
-                  <Link to="/settings" className="flex items-center space-x-3 w-full px-4 py-2 text-left organic-transition font-body text-text-secondary dark:text-dark-text-secondary hover:text-forest dark:hover:text-dark-forest hover:bg-forest-gradient/30 dark:hover:bg-dark-forest-gradient/30">
+                  <Link to="/settings" className="flex items-center space-x-3 w-full px-4 py-2 text-left organic-transition font-body text-text-secondary hover:text-forest hover:bg-forest-gradient/30">
                     <Icon name="Settings" size={16} />
                     <span>Settings</span>
                   </Link>
-                  <button className="flex items-center space-x-3 w-full px-4 py-2 text-left organic-transition font-body text-text-secondary dark:text-dark-text-secondary hover:text-forest dark:hover:text-dark-forest hover:bg-forest-gradient/30 dark:hover:bg-dark-forest-gradient/30">
+                  <button className="flex items-center space-x-3 w-full px-4 py-2 text-left organic-transition font-body text-text-secondary hover:text-forest hover:bg-forest-gradient/30">
                     <Icon name="HelpCircle" size={16} />
                     <span>Help</span>
                   </button>
-                  <button onClick={handleLogout} className="flex items-center space-x-3 w-full px-4 py-2 text-left organic-transition font-body text-text-secondary dark:text-dark-text-secondary hover:text-error dark:hover:text-dark-error hover:bg-red-50 dark:hover:bg-dark-destructive/20">
+                  <button onClick={handleLogout} className="flex items-center space-x-3 w-full px-4 py-2 text-left organic-transition font-body text-text-secondary hover:text-error hover:bg-red-50">
                     <Icon name="LogOut" size={16} />
                     <span>Sign Out</span>
                   </button>
@@ -156,7 +154,7 @@ const Header = () => {
             {/* Mobile Menu Button */}
             <button
               onClick={toggleMobileMenu}
-              className="lg:hidden p-2 rounded-eco-sm organic-transition text-text-secondary dark:text-dark-text-secondary hover:text-forest dark:hover:text-dark-forest hover:bg-forest-gradient/30 dark:hover:bg-dark-forest-gradient/30"
+              className="lg:hidden p-2 rounded-eco-sm organic-transition text-text-secondary hover:text-forest hover:bg-forest-gradient/30"
             >
               <Icon name={isMobileMenuOpen ? "X" : "Menu"} size={20} />
             </button>
@@ -165,7 +163,7 @@ const Header = () => {
 
         {/* Mobile Navigation Menu */}
         {isMobileMenuOpen && (
-          <div className="lg:hidden bg-background dark:bg-dark-background border-t border-border dark:border-dark-border animate-slide-up">
+          <div className="lg:hidden bg-background border-t border-border animate-slide-up">
             <div className="px-4 py-4 space-y-2">
               {navigationItems?.map((item) => (
                 <Link
@@ -174,8 +172,8 @@ const Header = () => {
                   onClick={() => setIsMobileMenuOpen(false)}
                   className={`flex items-center space-x-3 px-4 py-3 rounded-eco-sm organic-transition font-body font-medium ${
                     isActivePath(item?.path)
-                      ? 'bg-forest-gradient text-forest dark:text-dark-forest border border-forest/20 dark:border-dark-forest/20'
-                      : 'text-text-secondary dark:text-dark-text-secondary hover:text-forest dark:hover:text-dark-forest hover:bg-forest-gradient/50 dark:hover:bg-dark-forest-gradient/50'
+                      ? 'bg-forest-gradient text-forest border border-forest/20'
+                      : 'text-text-secondary hover:text-forest hover:bg-forest-gradient/50'
                   }`}
                 >
                   <Icon name={item?.icon} size={20} />
@@ -183,7 +181,7 @@ const Header = () => {
                 </Link>
               ))}
               
-              <div className="border-t border-border dark:border-dark-border pt-2 mt-4">
+              <div className="border-t border-border pt-2 mt-4">
                 {secondaryItems?.map((item) => (
                   <Link
                     key={item?.path}
@@ -191,8 +189,8 @@ const Header = () => {
                     onClick={() => setIsMobileMenuOpen(false)}
                     className={`flex items-center space-x-3 px-4 py-3 rounded-eco-sm organic-transition font-body font-medium ${
                       isActivePath(item?.path)
-                        ? 'bg-forest-gradient text-forest dark:text-dark-forest border border-forest/20 dark:border-dark-forest/20'
-                        : 'text-text-secondary dark:text-dark-text-secondary hover:text-forest dark:hover:text-dark-forest hover:bg-forest-gradient/50 dark:hover:bg-dark-forest-gradient/50'
+                        ? 'bg-forest-gradient text-forest border border-forest/20'
+                        : 'text-text-secondary hover:text-forest hover:bg-forest-gradient/50'
                     }`}
                   >
                     <Icon name={item?.icon} size={20} />

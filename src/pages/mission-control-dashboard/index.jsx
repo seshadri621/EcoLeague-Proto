@@ -25,7 +25,7 @@ const MissionControlDashboard = () => {
       nextLevelXP: 3000,
       completedMissions: 127,
       rank: 5,
-      avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face"
+      avatar: "/assets/images/no_image.png"
     };
 
     // Mock active quests data
@@ -41,7 +41,7 @@ const MissionControlDashboard = () => {
         location: "Central Park",
         participants: 23,
         endDate: new Date(Date.now() + 5 * 24 * 60 * 60 * 1000),
-        image: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=400&h=300&fit=crop"
+        image: "/assets/images/no_image.png"
       },
       {
         id: 2,
@@ -54,7 +54,7 @@ const MissionControlDashboard = () => {
         location: "Sunset Beach",
         participants: 45,
         endDate: new Date(Date.now() + 3 * 24 * 60 * 60 * 1000),
-        image: "https://images.unsplash.com/photo-1583212292454-1fe6229603b7?w=400&h=300&fit=crop"
+        image: "/assets/images/no_image.png"
       },
       {
         id: 3,
@@ -67,7 +67,7 @@ const MissionControlDashboard = () => {
         location: "Nature Reserve",
         participants: 12,
         endDate: new Date(Date.now() + 10 * 24 * 60 * 60 * 1000),
-        image: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=400&h=300&fit=crop"
+        image: "/assets/images/no_image.png"
       }
     ];
 
@@ -79,7 +79,7 @@ const MissionControlDashboard = () => {
       duration: 180,
       difficulty: "intermediate",
       xpReward: 100,
-      thumbnail: "https://images.unsplash.com/photo-1569163139394-de4e4f43e4e3?w=600&h=400&fit=crop",
+      thumbnail: "/assets/images/no_image.png",
       sections: [
         { title: "What is a Carbon Footprint?", duration: 45 },
         { title: "Measuring Your Impact", duration: 60 },
@@ -96,14 +96,14 @@ const MissionControlDashboard = () => {
         user: {
           name: "Sarah Chen",
           level: "Level 7 Explorer",
-          avatar: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=150&h=150&fit=crop&crop=face"
+          avatar: "/assets/images/no_image.png"
         },
         content: "Just completed the Ocean Guardian challenge! Removed 50 lbs of plastic waste from local beaches.",
         timestamp: new Date(Date.now() - 30 * 60 * 1000),
         likes: 24,
         shares: 8,
         isLiked: false,
-        image: "https://images.unsplash.com/photo-1583212292454-1fe6229603b7?w=400&h=200&fit=crop",
+        image: "/assets/images/no_image.png",
         badge: {
           name: "Ocean Guardian",
           description: "Protected marine ecosystems"
@@ -119,14 +119,14 @@ const MissionControlDashboard = () => {
         user: {
           name: "Marcus Rodriguez",
           level: "Level 4 Activist",
-          avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face"
+          avatar: "/assets/images/no_image.png"
         },
         content: "Leading a community tree planting event this weekend! We\'ve already planted 25 native oak trees in Riverside Park.",
         timestamp: new Date(Date.now() - 2 * 60 * 60 * 1000),
         likes: 18,
         shares: 12,
         isLiked: true,
-        image: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=400&h=200&fit=crop",
+        image: "/assets/images/no_image.png",
         stats: [
           { label: "Trees Planted", value: "25" },
           { label: "Volunteers", value: "15" }
@@ -138,7 +138,7 @@ const MissionControlDashboard = () => {
         user: {
           name: "Emma Thompson",
           level: "Level 6 Champion",
-          avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face"
+          avatar: "/assets/images/no_image.png"
         },
         content: "Started a discussion about sustainable transportation options in our city. What are your favorite eco-friendly ways to commute?",
         timestamp: new Date(Date.now() - 4 * 60 * 60 * 1000),
@@ -152,7 +152,7 @@ const MissionControlDashboard = () => {
         user: {
           name: "David Park",
           level: "Level 3 Learner",
-          avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face"
+          avatar: "/assets/images/no_image.png"
         },
         content: "Just finished the \'Renewable Energy Basics\' lesson series! Amazing to learn how solar and wind power can transform our energy future.",
         timestamp: new Date(Date.now() - 6 * 60 * 60 * 1000),
@@ -217,7 +217,7 @@ const MissionControlDashboard = () => {
       currentStreak: newStreak,
       totalXP: prev?.totalXP + 50
     }));
-  };
+.  };
 
   const handleXPBoost = () => {
     console.log('Activating XP boost...');

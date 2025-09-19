@@ -116,7 +116,7 @@ const AchievementGallery = () => {
       points: 250,
       completedDate: "Dec 12, 2024",
       duration: "4 hours",
-      images: ["https://images.unsplash.com/photo-1618477388954-7852f32655ec?w=400"],
+      images: ["/assets/images/no_image.png"],
       reflection: "Amazing to see how much impact we can make when working together. The beach looked completely transformed!"
     },
     {
@@ -131,7 +131,7 @@ const AchievementGallery = () => {
       points: 180,
       completedDate: "Dec 8, 2024",
       duration: "3 hours",
-      images: ["https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=400"],
+      images: ["/assets/images/no_image.png"],
       reflection: "Each tree we planted today will provide oxygen for decades to come. Such a rewarding experience!"
     },
     {
@@ -146,7 +146,7 @@ const AchievementGallery = () => {
       points: 320,
       completedDate: "Dec 3, 2024",
       duration: "6 hours",
-      images: ["https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=400", "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400"],
+      images: ["/assets/images/no_image.png", "/assets/images/no_image.png"],
       reflection: "Learning about native species and their importance to local ecosystems was incredibly educational."
     }
   ];
@@ -157,7 +157,7 @@ const AchievementGallery = () => {
     user: {
       name: "Sarah Chen",
       title: "Environmental Science Student",
-      avatar: "https://randomuser.me/api/portraits/women/32.jpg",
+      avatar: "/assets/images/no_image.png",
       badges: 47,
       missions: 89
     },
@@ -494,9 +494,9 @@ const AchievementGallery = () => {
                 </h3>
                 <div className="space-y-3">
                   {[
-                    { from: "Alex Rodriguez", message: "Amazing leadership during the beach cleanup!", avatar: "https://randomuser.me/api/portraits/men/45.jpg" },
-                    { from: "Maria Santos", message: "Your environmental tips helped me reduce my carbon footprint!", avatar: "https://randomuser.me/api/portraits/women/28.jpg" },
-                    { from: "David Kim", message: "Thanks for mentoring me through my first mission!", avatar: "https://randomuser.me/api/portraits/men/33.jpg" }
+                    { from: "Alex Rodriguez", message: "Amazing leadership during the beach cleanup!", avatar: "/assets/images/no_image.png" },
+                    { from: "Maria Santos", message: "Your environmental tips helped me reduce my carbon footprint!", avatar: "/assets/images/no_image.png" },
+                    { from: "David Kim", message: "Thanks for mentoring me through my first mission!", avatar: "/assets/images/no_image.png" }
                   ]?.map((recognition, index) => (
                     <div key={index} className="flex items-start space-x-3 p-3 bg-ocean-gradient/10 rounded-eco-md">
                       <img
