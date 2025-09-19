@@ -13,26 +13,45 @@ import Profile from './pages/Profile';
 import Settings from './pages/Settings';
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
+import PrivateRoute from "./components/PrivateRoute";
+import { useAuth } from "./contexts/AuthContext";
 
 const Routes = () => {
+  const { currentUser } = useAuth();
+
   return (
     <BrowserRouter>
       <ErrorBoundary>
-      <ScrollToTop />
-      <RouterRoutes>
-        {/* Define your route here */}
-        <Route path="/" element={<Login />} />
-        <Route path="/signup" element={<Signup />} />
-        <Route path="/mission-control-dashboard" element={<MissionControlDashboard />} />
-        <Route path="/mission-upload-portal" element={<MissionUploadPortal />} />
-        <Route path="/achievement-gallery" element={<AchievementGallery />} />
-        <Route path="/quest-map" element={<QuestMap />} />
-        <Route path="/learning-arena" element={<LearningArena />} />
-        <Route path="/community-impact-hub" element={<CommunityImpactHub />} />
-        <Route path="/profile" element={<Profile />} />
-        <Route path="/settings" element={<Settings />} />
-        <Route path="*" element={<NotFound />} />
-      </RouterRoutes>
+        <ScrollToTop />
+        <RouterRoutes>
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
+
+          {/* Protected Routes */}
+          <Route element={<PrivateRoute />}>
+            <Route path="/mission-control-dashboard" element={<MissionControlDashboard />} />
+            <Route path="/mission-upload-portal" element={<MissionUploadPortal />} />
+            <Route path="/achievement-gallery" element={<AchievementGallery />} />
+            <Route path="/quest-map" element={<QuestMap />} />
+            <Route path="/learning-arena" element={<LearningArena />} />
+            <Route path="/community-impact-hub" element={<CommunityImpactHub />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/settings" element={<Settings />} />
+          </Route>
+
+          <Route
+            path="/"
+            element={
+              currentUser ? (
+                <Navigate to="/mission-control-dashboard" />
+              ) : (
+                <Navigate to="/login" />
+              )
+            }
+          />
+
+          <Route path="*" element={<NotFound />} />
+        </RouterRoutes>
       </ErrorBoundary>
     </BrowserRouter>
   );

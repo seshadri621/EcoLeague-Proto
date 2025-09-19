@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet';
-import Header from '../../components/ui/Header';
+import Header from '../../components/Header';
 import HeroSection from './components/HeroSection';
 import ActiveQuestsSection from './components/ActiveQuestsSection';
 import TodayLessonSection from './components/TodayLessonSection';
