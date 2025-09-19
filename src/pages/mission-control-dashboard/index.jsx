@@ -217,7 +217,7 @@ const MissionControlDashboard = () => {
       currentStreak: newStreak,
       totalXP: prev?.totalXP + 50
     }));
-.  };
+  };
 
   const handleXPBoost = () => {
     console.log('Activating XP boost...');
