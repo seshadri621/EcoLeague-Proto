@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       try {
         await signInWithEmailAndPassword(auth, email, password);
-        window.location.href = "/";
+        window.location.href = "/mission-control-dashboard";
       } catch (error) {
         alert(`Error: ${error.message}`);
       }
@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const guestBtn = document.getElementById("guest-btn");
   if (guestBtn) {
     guestBtn.addEventListener("click", () => {
-      window.location.href = "/";
+      window.location.href = "/mission-control-dashboard";
     });
   }
 });

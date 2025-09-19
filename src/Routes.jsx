@@ -13,7 +13,6 @@ import Profile from './pages/Profile';
 import Settings from './pages/Settings';
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
-import LandingPage from "./pages/LandingPage";
 
 const Routes = () => {
   return (
@@ -22,8 +21,7 @@ const Routes = () => {
       <ScrollToTop />
       <RouterRoutes>
         {/* Define your route here */}
-        <Route path="/" element={<LandingPage />} />
-        <Route path="/login" element={<Login />} />
+        <Route path="/" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/mission-control-dashboard" element={<MissionControlDashboard />} />
         <Route path="/mission-upload-portal" element={<MissionUploadPortal />} />

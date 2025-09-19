@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       try {
         await createUserWithEmailAndPassword(auth, email, password);
-        window.location.href = "login.html";
+        window.location.href = "/mission-control-dashboard";
       } catch (error) { 
         alert(`Error: ${error.message}`);
       }
