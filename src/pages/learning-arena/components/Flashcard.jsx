@@ -20,6 +20,13 @@ const Flashcard = ({ section }) => {
           <p className="font-body text-text-primary leading-relaxed">
             {section.content}
           </p>
+          {section.audio && (
+            <div className="mt-4">
+              <audio controls src={section.audio} className="w-full">
+                Your browser does not support the audio element.
+              </audio>
+            </div>
+          )}
         </div>
       </div>
     </div>

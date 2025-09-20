@@ -63,7 +63,7 @@ const LessonDetailModal = ({ isOpen, onClose, onStartQuiz, lesson }) => {
 
             <div>
               {lesson.sections.map((section, index) => (
-                <Flashcard key={index} section={section} />
+                <Flashcard key={index} section={{...section, audio: "/assets/audio/dummy_audio.mp3"}} />
               ))}
             </div>
           </div>
