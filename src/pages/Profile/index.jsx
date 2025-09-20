@@ -2,30 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import Header from '../../components/ui/Header';
 import Tooltip from '../../components/ui/Tooltip';
-
 import Image from '../../components/AppImage';
 import Icon from '../../components/AppIcon';
-// Mock Data (similar to Mission Control Dashboard)
-const mockUser = {
-  id: 1,
-  name: "Environmental Hero",
-  level: 5,
-  totalXP: 2847,
-  avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face",
-  badges: [
-    { id: 1, name: "Tree Planter", icon: "TreePine", rarity: "rare", description: "Awarded for planting 100 trees." },
-    { id: 2, name: "Recycler", icon: "Recycle", rarity: "common", description: "Awarded for recycling 500 items." },
-    { id: 3, name: "Beach Cleaner", icon: "Waves", rarity: "epic", description: "Awarded for participating in 5 beach clean-up events." },
-  ],
-  leaderboard: {
-    rank: 5,
-    totalParticipants: 100,
-  },
-  missions: {
-    completed: 127,
-    taken: 135,
-  }
-};
+import { getUser } from '../../services/user';
 
 const getRarityColor = (rarity) => {
   switch (rarity) {
@@ -45,11 +24,10 @@ const Profile = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Simulate loading
-    setTimeout(() => {
-      setUser(mockUser);
+    getUser().then(userData => {
+      setUser(userData);
       setIsLoading(false);
-    }, 1000);
+    });
   }, []);
 
   if (isLoading) {
