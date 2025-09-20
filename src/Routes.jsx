@@ -12,7 +12,8 @@ import CommunityImpactHub from './pages/community-impact-hub';
 import Profile from './pages/Profile';
 import Settings from './pages/Settings';
 import ForgotPassword from "./pages/ForgotPassword";
-import LandingPage from "./pages/LandingPage";
+import Login from "./pages/Login";
+import Signup from "./pages/Signup";
 import PrivateRoute from "./components/PrivateRoute";
 import { useAuth } from "./contexts/AuthContext";
 
@@ -24,9 +25,9 @@ const Routes = () => {
       <ErrorBoundary>
         <ScrollToTop />
         <RouterRoutes>
-          <Route path="/" element={!currentUser ? <LandingPage /> : <Navigate to="/mission-control-dashboard" />} />
-          <Route path="/login" element={<Navigate to="/" />} />
-          <Route path="/signup" element={<Navigate to="/" />} />
+          <Route path="/" element={!currentUser ? <Login /> : <Navigate to="/mission-control-dashboard" />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
           <Route path="/forgot-password" element={<ForgotPassword />} />
           <Route path="/mission-control-dashboard" element={<MissionControlDashboard />} />
 
