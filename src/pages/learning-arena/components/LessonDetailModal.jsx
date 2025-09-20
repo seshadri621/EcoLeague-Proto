@@ -2,6 +2,7 @@ import React from 'react';
 import Icon from '../../../components/AppIcon';
 import Button from '../../../components/ui/Button';
 import Image from '../../../components/AppImage';
+import Flashcard from './Flashcard';
 
 const LessonDetailModal = ({ isOpen, onClose, onStartQuiz, lesson }) => {
   if (!isOpen || !lesson) return null;
@@ -60,16 +61,9 @@ const LessonDetailModal = ({ isOpen, onClose, onStartQuiz, lesson }) => {
               </div>
             </div>
 
-            <div className="prose max-w-none prose-eco">
+            <div>
               {lesson.sections.map((section, index) => (
-                <div key={index} className="mb-6 pb-6 border-b border-border last:border-b-0 last:pb-0">
-                  <h3 className="font-headline font-semibold text-lg text-forest">
-                    {index + 1}. {section.title}
-                  </h3>
-                  <p className="font-body text-text-primary leading-relaxed">
-                    {section.content}
-                  </p>
-                </div>
+                <Flashcard key={index} section={section} />
               ))}
             </div>
           </div>
