@@ -1,18 +1,19 @@
 import React, { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Icon from '../AppIcon';
 import Button from './Button';
-import { auth } from '../../../public/firebase';
+import { auth } from '../../firebase';
 import { signOut } from 'firebase/auth';
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
 
   const handleLogout = async () => {
     try {
       await signOut(auth);
-      window.location.href = '/login.html';
+      navigate('/login');
     } catch (error) {
       console.error("Logout Error:", error);
       alert('Failed to log out. Please try again.');
@@ -147,7 +148,7 @@ const Header = () => {
                     <Icon name="LogOut" size={16} />
                     <span>Sign Out</span>
                   </button>
-                </div>
+|               </div>
               </div>
             </div>
 
