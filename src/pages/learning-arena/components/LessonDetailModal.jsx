@@ -1,10 +1,40 @@
-import React from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import Icon from '../../../components/AppIcon';
 import Button from '../../../components/ui/Button';
-import Image from '../../../components/AppImage';
 import Flashcard from './Flashcard';
 
 const LessonDetailModal = ({ isOpen, onClose, onStartQuiz, lesson }) => {
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [progress, setProgress] = useState(0);
+  const audioRef = useRef(null);
+
+  const togglePlay = () => {
+    if (isPlaying) {
+      audioRef.current.pause();
+    } else {
+      audioRef.current.play();
+    }
+    setIsPlaying(!isPlaying);
+  };
+
+  useEffect(() => {
+    const audio = audioRef.current;
+    if (!audio) return;
+
+    const handleTimeUpdate = () => {
+      const newProgress = (audio.currentTime / audio.duration) * 100;
+      setProgress(newProgress);
+    };
+    const handleAudioEnd = () => setIsPlaying(false);
+
+    audio.addEventListener('timeupdate', handleTimeUpdate);
+    audio.addEventListener('ended', handleAudioEnd);
+    return () => {
+      audio.removeEventListener('timeupdate', handleTimeUpdate);
+      audio.removeEventListener('ended', handleAudioEnd);
+    };
+  }, [audioRef.current, isOpen]);
+
   if (!isOpen || !lesson) return null;
 
   const totalDuration = lesson.sections.reduce((sum, section) => sum + section.duration, 0);
@@ -63,15 +93,37 @@ const LessonDetailModal = ({ isOpen, onClose, onStartQuiz, lesson }) => {
 
             <div>
               {lesson.sections.map((section, index) => (
-                <Flashcard key={index} section={{...section, audio: "/assets/audio/dummy_audio.mp3"}} />
+                <Flashcard key={index} section={section} />
               ))}
             </div>
           </div>
         </div>
 
         {/* Footer */}
-        <div className="p-6 border-t border-border bg-muted/30 flex justify-end items-center gap-4">
-           <Button
+        <div className="p-6 border-t border-border bg-muted/30 flex justify-between items-center gap-4">
+          {/* Audio Player */}
+          <div className="flex items-center space-x-3 flex-1">
+            <button
+              onClick={togglePlay}
+              className="w-10 h-10 bg-forest rounded-full flex items-center justify-center text-white organic-transition hover:bg-green-700 flex-shrink-0"
+            >
+              <Icon name={isPlaying ? 'Pause' : 'Play'} size={16} />
+            </button>
+            <div className="flex-1">
+              <p className="text-xs text-text-secondary font-medium">Listen to the lesson</p>
+              <div className="w-full bg-border rounded-full h-1.5 mt-1">
+                <div
+                  className="bg-forest h-1.5 rounded-full organic-transition"
+                  style={{ width: `${progress || 0}%` }}
+                ></div>
+              </div>
+            </div>
+          </div>
+
+          {/* Action Buttons */}
+          <div className="flex items-center gap-4">
+            <audio ref={audioRef} src={lesson.audioUrl} className="hidden" />
+            <Button
             variant="outline"
             onClick={onClose}
           >
@@ -85,6 +137,7 @@ const LessonDetailModal = ({ isOpen, onClose, onStartQuiz, lesson }) => {
           >
             Start Quiz
           </Button>
+          </div>
         </div>
       </div>
     </div>

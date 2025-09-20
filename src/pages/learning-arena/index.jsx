@@ -39,6 +39,7 @@ const LearningArena = () => {
       rating: 4.8,
       xpReward: 100,
       thumbnail: "https://images.unsplash.com/photo-1569163139394-de4e4f43e4e3?w=400&h=300&fit=crop",
+      audioUrl: "https://cdn.pixabay.com/audio/2022/11/17/audio_874b2a321a.mp3",
       sections: [
         {
           title: "What is Climate Change?",
@@ -99,6 +100,7 @@ const LearningArena = () => {
       rating: 4.9,
       xpReward: 150,
       thumbnail: "https://images.pexels.com/photos/1108701/pexels-photo-1108701.jpeg?w=400&h=300&fit=crop",
+      audioUrl: "https://cdn.pixabay.com/audio/2023/10/10/audio_163425a9d3.mp3",
       sections: [
         {
           title: "What is Biodiversity?",
@@ -159,6 +161,7 @@ const LearningArena = () => {
       rating: 4.7,
       xpReward: 200,
       thumbnail: "https://images.pixabay.com/photo/2017/09/12/13/21/photovoltaic-system-2742304_1280.jpg?w=400&h=300&fit=crop",
+      audioUrl: "https://cdn.pixabay.com/audio/2022/08/03/audio_54c33c6a93.mp3",
       sections: [
         {
           title: "Harnessing the Sun: Solar Power",
@@ -219,6 +222,7 @@ const LearningArena = () => {
       rating: 4.6,
       xpReward: 80,
       thumbnail: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=400&h=300&fit=crop",
+      audioUrl: "https://cdn.pixabay.com/audio/2024/02/08/audio_79893465f6.mp3",
       sections: [
         {
           title: "The 5 R's: Refuse, Reduce, Reuse, Rot, Recycle",
@@ -279,6 +283,7 @@ const LearningArena = () => {
       rating: 4.8,
       xpReward: 120,
       thumbnail: "https://images.pexels.com/photos/1001682/pexels-photo-1001682.jpeg?w=400&h=300&fit=crop",
+      audioUrl: "https://cdn.pixabay.com/audio/2022/08/04/audio_2dde649953.mp3",
       sections: [
         {
           title: "The Problem of Plastic Pollution",
@@ -339,6 +344,7 @@ const LearningArena = () => {
       rating: 4.9,
       xpReward: 250,
       thumbnail: "https://images.pixabay.com/photo/2016/11/27/21/42/stock-1863880_1280.jpg?w=400&h=300&fit=crop",
+      audioUrl: "https://cdn.pixabay.com/audio/2022/12/16/audio_83181b737e.mp3",
       sections: [
         {
           title: "The Role of Government",
