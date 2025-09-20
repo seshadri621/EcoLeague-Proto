@@ -45,13 +45,9 @@ const Header = () => {
           {/* Logo Section */}
           <div className="flex items-center space-x-3">
             <Link to="/mission-control-dashboard" className="flex items-center space-x-3 group">
-              <div className="relative">
-                <div className="w-10 h-10 bg-gradient-to-br from-forest to-primary rounded-eco-md flex items-center justify-center mission-pulse">
-                  <Icon name="Leaf" size={24} color="white" strokeWidth={2.5} />
-                </div>
-              </div>
               <div className="hidden sm:block">
-                <h1 className="text-xl font-headline font-bold text-gradient-forest">
+                <h1 className="text-xl font-headline font-bold text-gradient-forest flex items-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-leaf mr-2"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"></path><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"></path></svg>
                   EcoLeague
                 </h1>
                 <p className="text-xs text-text-secondary font-body">
