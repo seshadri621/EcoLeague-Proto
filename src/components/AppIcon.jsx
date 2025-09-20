@@ -1,6 +1,6 @@
 import React from 'react';
-import * as LucideIcons from 'lucide-react';
-import { HelpCircle } from 'lucide-react';
+import * as FeatherIcons from 'react-feather';
+import { HelpCircle } from 'react-feather';
 
 function Icon({
     name,
@@ -10,7 +10,7 @@ function Icon({
     strokeWidth = 2,
     ...props
 }) {
-    const IconComponent = LucideIcons?.[name];
+    const IconComponent = FeatherIcons[name];
 
     if (!IconComponent) {
         return <HelpCircle size={size} color="gray" strokeWidth={strokeWidth} className={className} {...props} />;
@@ -24,4 +24,5 @@ function Icon({
         {...props}
     />;
 }
+
 export default Icon;

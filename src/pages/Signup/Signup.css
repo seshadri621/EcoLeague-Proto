@@ -1,6 +1,7 @@
+
 .signup-page {
-    font-family: Arial, sans-serif;
-    background-color: #f0f4f8;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    background-color: #e6f4ea;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -18,7 +19,7 @@
 }
 h2 {
     margin-bottom: 20px;
-    color: #1e3a8a;
+    color: #166534;
 }
 .form-group {
     margin-bottom: 20px;
@@ -49,11 +50,11 @@ button {
     margin-bottom: 10px;
 }
 #signup-btn {
-    background-color: #2563eb;
+    background-color: #22c55e;
     color: white;
 }
 #signup-btn:hover {
-    background-color: #1d4ed8;
+    background-color: #16a34a;
 }
 #login-link {
     text-decoration: none;

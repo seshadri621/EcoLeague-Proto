@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Icon from '../../../components/AppIcon';
 import Button from '../../../components/ui/Button';
 import Image from '../../../components/AppImage';
+import { addXP, updateLeaderboard } from '../../../services/user';
 
 const QuizModal = ({ isOpen, onClose, quiz, onComplete }) => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -75,6 +76,8 @@ const QuizModal = ({ isOpen, onClose, quiz, onComplete }) => {
   };
 
   const handleComplete = () => {
+    addXP(quiz.xpReward);
+    updateLeaderboard();
     onComplete(score);
     onClose();
     handleRestart();
