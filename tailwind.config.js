@@ -7,60 +7,59 @@ export default {
   theme: {
     extend: {
       colors: {
-        border: 'var(--color-border)', // gray-200
-        input: 'var(--color-input)', // gray-50
-        ring: 'var(--color-ring)', // forest-green
-        background: 'var(--color-background)', // gray-50
-        foreground: 'var(--color-foreground)', // gray-900
+        border: '#e5e7eb',
+        input: '#f9fafb',
+        ring: '#22c55e',
+        background: '#f9fafb',
+        foreground: '#111827',
         primary: {
-          DEFAULT: 'var(--color-primary)', // forest-green
-          foreground: 'var(--color-primary-foreground)' // white
+          DEFAULT: '#22c55e',
+          foreground: '#ffffff'
         },
         secondary: {
-          DEFAULT: 'var(--color-secondary)', // ocean-blue
-          foreground: 'var(--color-secondary-foreground)' // white
+          DEFAULT: '#3b82f6',
+          foreground: '#ffffff'
         },
         destructive: {
-          DEFAULT: 'var(--color-destructive)', // red-500
-          foreground: 'var(--color-destructive-foreground)' // white
+          DEFAULT: '#ef4444',
+          foreground: '#ffffff'
         },
         muted: {
-          DEFAULT: 'var(--color-muted)', // gray-100
-          foreground: 'var(--color-muted-foreground)' // gray-500
+          DEFAULT: '#f3f4f6',
+          foreground: '#6b7280'
         },
         accent: {
-          DEFAULT: 'var(--color-accent)', // orange-600
-          foreground: 'var(--color-accent-foreground)' // white
+          DEFAULT: '#f59e0b',
+          foreground: '#ffffff'
         },
         popover: {
-          DEFAULT: 'var(--color-popover)', // white
-          foreground: 'var(--color-popover-foreground)' // gray-900
+          DEFAULT: '#ffffff',
+          foreground: '#111827'
         },
         card: {
-          DEFAULT: 'var(--color-card)', // white
-          foreground: 'var(--color-card-foreground)' // gray-900
+          DEFAULT: '#ffffff',
+          foreground: '#111827'
         },
         success: {
-          DEFAULT: 'var(--color-success)', // emerald-500
-          foreground: 'var(--color-success-foreground)' // white
+          DEFAULT: '#16a34a',
+          foreground: '#ffffff'
         },
         warning: {
-          DEFAULT: 'var(--color-warning)', // amber-500
-          foreground: 'var(--color-warning-foreground)' // white
+          DEFAULT: '#fbbd23',
+          foreground: '#ffffff'
         },
         error: {
-          DEFAULT: 'var(--color-error)', // red-500
-          foreground: 'var(--color-error-foreground)' // white
+          DEFAULT: '#dc2626',
+          foreground: '#ffffff'
         },
-        // Brand specific colors
-        forest: 'var(--color-forest)', // forest-green
-        ocean: 'var(--color-ocean)', // ocean-blue
-        achievement: 'var(--color-achievement)', // orange-600
-        sky: 'var(--color-sky)', // sky-blue
-        action: 'var(--color-action)', // green-600
-        surface: 'var(--color-surface)', // gray-100
-        'text-primary': 'var(--color-text-primary)', // gray-900
-        'text-secondary': 'var(--color-text-secondary)', // gray-500
+        forest: '#166534',
+        ocean: '#1e40af',
+        achievement: '#b45309',
+        sky: '#0ea5e9',
+        action: '#15803d',
+        surface: '#f3f4f6',
+        'text-primary': '#111827',
+        'text-secondary': '#6b7280',
       },
       fontFamily: {
         'headline': ['Inter', 'sans-serif'],
@@ -71,27 +70,27 @@ export default {
         'nunito': ['Nunito', 'sans-serif']
       },
       fontSize: {
-        'hero': ['3rem', { lineHeight: '1.1', fontWeight: '700' }], // 48px
-        'mission': ['2rem', { lineHeight: '1.2', fontWeight: '600' }], // 32px
-        'quest': ['1.5rem', { lineHeight: '1.3', fontWeight: '600' }], // 24px
-        'achievement': ['1.25rem', { lineHeight: '1.4', fontWeight: '700' }] // 20px
+        'hero': ['3rem', { lineHeight: '1.1', fontWeight: '700' }],
+        'mission': ['2rem', { lineHeight: '1.2', fontWeight: '600' }],
+        'quest': ['1.5rem', { lineHeight: '1.3', fontWeight: '600' }],
+        'achievement': ['1.25rem', { lineHeight: '1.4', fontWeight: '700' }]
       },
       spacing: {
-        'eco-xs': 'var(--spacing-xs)', // 8px
-        'eco-sm': 'var(--spacing-sm)', // 12px
-        'eco-md': 'var(--spacing-md)', // 20px
-        'eco-lg': 'var(--spacing-lg)', // 32px
-        'eco-xl': 'var(--spacing-xl)' // 52px
+        'eco-xs': '8px',
+        'eco-sm': '12px',
+        'eco-md': '20px',
+        'eco-lg': '32px',
+        'eco-xl': '52px'
       },
       borderRadius: {
-        'eco-sm': 'var(--radius-sm)', // 8px
-        'eco-md': 'var(--radius-md)', // 12px
-        'eco-lg': 'var(--radius-lg)' // 16px
+        'eco-sm': '8px',
+        'eco-md': '12px',
+        'eco-lg': '16px'
       },
       boxShadow: {
-        'eco-sm': 'var(--shadow-sm)', // 0 2px 10px rgba(45, 90, 39, 0.05)
-        'eco-md': 'var(--shadow-md)', // 0 4px 20px rgba(45, 90, 39, 0.1)
-        'eco-lg': 'var(--shadow-lg)', // 0 8px 24px rgba(0, 0, 0, 0.15)
+        'eco-sm': '0 2px 10px rgba(45, 90, 39, 0.05)',
+        'eco-md': '0 4px 20px rgba(45, 90, 39, 0.1)',
+        'eco-lg': '0 8px 24px rgba(0, 0, 0, 0.15)',
         'mission-pulse': '0 0 0 0 rgba(45, 90, 39, 0.4)',
         'achievement-glow': '0 0 20px 10px rgba(255, 215, 0, 0.4)'
       },

@@ -14,7 +14,7 @@ const FactCheckCommunity = () => {
       claim: "Plastic bags take 1000 years to decompose in landfills",
       submittedBy: {
         name: "Jennifer Walsh",
-        avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150",
+        avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150",
         level: "Fact Seeker"
       },
       category: "Waste Management",
@@ -30,7 +30,7 @@ const FactCheckCommunity = () => {
       claim: "Electric vehicles produce more emissions than gas cars when accounting for battery production",
       submittedBy: {
         name: "David Park",
-        avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150",
+        avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150",
         level: "Climate Researcher"
       },
       category: "Transportation",
@@ -48,7 +48,7 @@ const FactCheckCommunity = () => {
       claim: "Bamboo toothbrushes are always more environmentally friendly than plastic ones",
       submittedBy: {
         name: "Lisa Chen",
-        avatar: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=150",
+        avatar: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=150",
         level: "Sustainable Living Advocate"
       },
       category: "Sustainable Products",
@@ -66,7 +66,7 @@ const FactCheckCommunity = () => {
       claim: "Recycling plastic actually uses more energy than creating new plastic",
       submittedBy: {
         name: "Michael Torres",
-        avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150",
+        avatar: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=150",
         level: "Environmental Student"
       },
       category: "Recycling",
@@ -84,21 +84,21 @@ const FactCheckCommunity = () => {
   const expertContributors = [
     {
       name: "Dr. Sarah Martinez",
-      avatar: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=150",
+      avatar: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150",
       specialty: "Climate Science",
       verifications: 47,
       accuracy: 96
     },
     {
       name: "Prof. James Wilson",
-      avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150",
+      avatar: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?w=150",
       specialty: "Environmental Engineering",
       verifications: 32,
       accuracy: 94
     },
     {
       name: "Dr. Elena Rodriguez",
-      avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150",
+      avatar: "https://images.unsplash.com/photo-1557862921-37829c790f19?w=150",
       specialty: "Sustainable Materials",
       verifications: 28,
       accuracy: 98
