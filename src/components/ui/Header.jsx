@@ -23,7 +23,7 @@ const Header = () => {
   const navigationItems = [
     { name: 'Mission Control', path: '/mission-control-dashboard', icon: 'Compass' },
     { name: 'Quest Map', path: '/quest-map', icon: 'Map' },
-    { name: 'Learning Arena', path: '/learning-arena', icon: 'BookOpen' },
+    { name: 'Learning Arena', path: '/learning-arena', icon: 'GraduationCap' },
     { name: 'Community Hub', path: '/community-impact-hub', icon: 'Users' }
   ];
 
@@ -47,7 +47,7 @@ const Header = () => {
             <Link to="/mission-control-dashboard" className="flex items-center space-x-3 group">
               <div className="hidden sm:block">
                 <h1 className="text-xl font-headline font-bold text-gradient-forest flex items-center">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-leaf mr-2"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"></path><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"></path></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="green" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-leaf mr-2"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"></path><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"></path></svg>
                   EcoLeague
                 </h1>
                 <p className="text-xs text-text-secondary font-body">
