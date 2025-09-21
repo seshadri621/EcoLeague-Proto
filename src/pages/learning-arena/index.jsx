@@ -11,6 +11,7 @@ import LearningPath from './components/LearningPath';
 import ChallengeMode from './components/ChallengeMode';
 import ExpertSession from './components/ExpertSession';
 import ProgressTracker from './components/ProgressTracker';
+import MiniGames from './components/MiniGames';
 
 const LearningArena = () => {
   const [activeTab, setActiveTab] = useState('lessons');
@@ -29,7 +30,7 @@ const LearningArena = () => {
     {
       id: 1,
       title: "Climate Change Fundamentals",
-      description: "Understanding the science behind global warming, greenhouse gases, and their impact on our planet's climate systems.",
+      description: "A brief introduction to climate science and its core concepts.",
       image: "https://images.unsplash.com/photo-1569163139394-de4e4f43e4e3?w=400&h=300&fit=crop",
       duration: 5,
       difficulty: "beginner",
@@ -43,22 +44,22 @@ const LearningArena = () => {
       sections: [
         {
           title: "What is Climate Change?",
-          content: "Climate change refers to long-term shifts in temperatures and weather patterns. These shifts may be natural, but since the 1800s, human activities have been the main driver of climate change, primarily due to the burning of fossil fuels (like coal, oil, and gas), which produces heat-trapping gases.",
+          content: "Climate change refers to long-term shifts in temperatures and weather patterns, primarily driven by human activities.",
           duration: 60
         },
         {
           title: "The Greenhouse Effect",
-          content: "The greenhouse effect is a natural process that warms the Earth’s surface. When the Sun’s energy reaches the Earth’s atmosphere, some of it is reflected back to space and the rest is absorbed and re-radiated by greenhouse gases. This trapping of heat is what keeps our planet habitable. However, an excess of these gases can cause the Earth to warm up too much.",
+          content: "A natural process that warms the Earth. An excess of greenhouse gases intensifies this effect, leading to global warming.",
           duration: 90
         },
         {
           title: "Key Greenhouse Gases",
-          content: "The main greenhouse gases are Carbon Dioxide (CO2), Methane (CH4), and Nitrous Oxide (N2O). CO2 is the most significant, primarily released through burning fossil fuels. Methane is more potent but has a shorter atmospheric lifetime, often released from agriculture and landfills.",
+          content: "The main culprits are Carbon Dioxide (CO2), Methane (CH4), and Nitrous Oxide (N2O).",
           duration: 80
         },
         {
           title: "Impacts of Climate Change",
-          content: "The impacts of climate change include more frequent and intense droughts, storms, heat waves, rising sea levels, melting glaciers, and warming oceans. These can directly harm animals, destroy the places they live, and wreak havoc on people's livelihoods and communities.",
+          content: "Impacts include rising sea levels, extreme weather events, and threats to biodiversity.",
           duration: 70
         }
       ],
@@ -89,8 +90,8 @@ const LearningArena = () => {
     },
     {
       id: 2,
-      title: "Biodiversity Conservation Strategies",
-      description: "Explore effective methods for protecting endangered species and preserving ecosystem diversity across different habitats.",
+      title: "Biodiversity Conservation",
+      description: "Learn methods for protecting species and preserving ecosystems.",
       image: "https://images.pexels.com/photos/1108701/pexels-photo-1108701.jpeg?w=400&h=300&fit=crop",
       duration: 7,
       difficulty: "intermediate",
@@ -104,22 +105,22 @@ const LearningArena = () => {
       sections: [
         {
           title: "What is Biodiversity?",
-          content: "Biodiversity is the variety of life on Earth, in all its forms. It encompasses all of the different species of plants, animals, fungi, and microorganisms, as well as the genetic diversity within those species and the ecosystems they form. It's essential for the processes that support all life on Earth, including humans.",
+          content: "The variety of life on Earth, from the smallest microbe to the largest whale. It's essential for a healthy planet.",
           duration: 70
         },
         {
           title: "Habitat Protection",
-          content: "One of the most effective ways to protect biodiversity is to preserve natural habitats. This involves creating protected areas like national parks and wildlife reserves, where human activity is limited. It also includes restoring degraded habitats, such as reforesting cleared areas or cleaning up polluted rivers.",
+          content: "Preserving natural spaces like forests and oceans is key to protecting biodiversity.",
           duration: 120
         },
         {
           title: "Species-Specific Actions",
-          content: "For critically endangered species, direct interventions are often necessary. These can include captive breeding programs, where animals are bred in zoos or special facilities before being released back into the wild. Anti-poaching patrols and laws are also crucial for protecting species targeted by illegal wildlife trade.",
+          content: "Interventions like captive breeding and anti-poaching efforts help save endangered species.",
           duration: 130
         },
         {
           title: "The Role of Community",
-          content: "Local communities play a vital role in conservation. Citizen science projects, where volunteers help collect data on local wildlife, can provide valuable information for researchers. Community-led conservation initiatives also ensure that the people who live closest to nature are involved in its protection.",
+          content: "Local communities are crucial partners in successful conservation efforts.",
           duration: 100
         }
       ],
@@ -148,250 +149,6 @@ const LearningArena = () => {
       isCompleted: false,
       progress: 45
     },
-    {
-      id: 3,
-      title: "Renewable Energy Technologies",
-      description: "Deep dive into solar, wind, hydro, and other renewable energy sources that are shaping our sustainable future.",
-      image: "https://images.pixabay.com/photo/2017/09/12/13/21/photovoltaic-system-2742304_1280.jpg?w=400&h=300&fit=crop",
-      duration: 8,
-      difficulty: "advanced",
-      category: "renewable",
-      tags: ["solar energy", "wind power", "clean technology"],
-      enrolledCount: 15670,
-      rating: 4.7,
-      xpReward: 200,
-      thumbnail: "https://images.pixabay.com/photo/2017/09/12/13/21/photovoltaic-system-2742304_1280.jpg?w=400&h=300&fit=crop",
-      audioUrl: "https://cdn.pixabay.com/audio/2022/08/03/audio_54c33c6a93.mp3",
-      sections: [
-        {
-          title: "Harnessing the Sun: Solar Power",
-          content: "Solar panels, or photovoltaic (PV) cells, convert sunlight directly into electricity. This technology is becoming increasingly affordable and can be deployed on rooftops or in large-scale solar farms. It's a clean, abundant energy source that reduces reliance on fossil fuels.",
-          duration: 120
-        },
-        {
-          title: "The Power of Wind",
-          content: "Wind turbines capture kinetic energy from the wind and convert it into electricity. Wind farms, both onshore and offshore, are a major source of renewable power. Modern turbines are highly efficient and can generate significant amounts of energy.",
-          duration: 120
-        },
-        {
-          title: "Water and Heat: Hydro and Geothermal",
-          content: "Hydroelectric power is generated by the flow of water, typically by damming rivers. Geothermal energy taps into the Earth's internal heat to produce steam, which drives turbines. Both are reliable sources of clean energy.",
-          duration: 120
-        },
-        {
-          title: "The Future: Energy Storage",
-          content: "A key challenge for renewables is their intermittent nature (the sun doesn't always shine, the wind doesn't always blow). Battery storage technologies are crucial for storing excess energy and releasing it when needed, ensuring a stable and reliable power grid.",
-          duration: 120
-        }
-      ],
-      quiz: {
-        id: 3,
-        title: "Renewable Energy Quiz",
-        xpReward: 200,
-        questions: [
-          {
-            question: "Which of these is NOT a renewable energy source?",
-            options: ["Solar", "Wind", "Natural Gas", "Hydroelectric"],
-            correctAnswer: 2
-          },
-          {
-            question: "What technology converts sunlight directly into electricity?",
-            options: ["Wind turbines", "Geothermal plants", "Photovoltaic (PV) cells", "Hydroelectric dams"],
-            correctAnswer: 2
-          },
-          {
-            question: "What is a major benefit of using renewable energy?",
-            options: ["It is more expensive", "It is available everywhere at all times", "It produces little to no greenhouse gases", "It requires no land to produce"],
-            correctAnswer: 2
-          }
-        ]
-      },
-      isCompleted: false,
-      progress: 0
-    },
-    {
-      id: 4,
-      title: "Sustainable Living Practices",
-      description: "Learn practical ways to reduce your environmental footprint through conscious consumption and lifestyle choices.",
-      image: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=400&h=300&fit=crop",
-      duration: 4,
-      difficulty: "beginner",
-      category: "sustainability",
-      tags: ["zero waste", "sustainable living", "eco-friendly"],
-      enrolledCount: 22100,
-      rating: 4.6,
-      xpReward: 80,
-      thumbnail: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=400&h=300&fit=crop",
-      audioUrl: "https://cdn.pixabay.com/audio/2024/02/08/audio_79893465f6.mp3",
-      sections: [
-        {
-          title: "The 5 R's: Refuse, Reduce, Reuse, Rot, Recycle",
-          content: "Go beyond just recycling. The most effective approach is to first refuse what you don't need, reduce what you do need, and reuse items as much as possible. Composting (rot) organic waste and recycling what's left are the final steps in minimizing your impact.",
-          duration: 80
-        },
-        {
-          title: "Conscious Consumption",
-          content: "Every purchase is a vote for the kind of world you want to live in. Choose products from sustainable brands, buy local to reduce transportation emissions, and opt for items with minimal or zero-waste packaging. Consider the entire lifecycle of a product before you buy.",
-          duration: 80
-        },
-        {
-          title: "Saving Water and Energy at Home",
-          content: "Simple habits can make a big difference. Turn off lights when you leave a room, unplug electronics when not in use, take shorter showers, and fix leaky faucets. These actions conserve precious resources and lower your utility bills.",
-          duration: 80
-        },
-        {
-          title: "Sustainable Transportation",
-          content: "Reduce your carbon footprint by walking, biking, or using public transport whenever possible. If you need a car, consider carpooling or switching to an electric or hybrid vehicle. Fewer cars on the road means cleaner air for everyone.",
-          duration: 60
-        }
-      ],
-      quiz: {
-        id: 4,
-        title: "Sustainable Living Quiz",
-        xpReward: 80,
-        questions: [
-          {
-            question: "Which of the '5 Rs' is considered the most effective first step for reducing waste?",
-            options: ["Recycle", "Reuse", "Refuse", "Rot"],
-            correctAnswer: 2
-          },
-          {
-            question: "What is 'conscious consumption'?",
-            options: ["Buying things without thinking", "Choosing products that are sustainable and ethically made", "Only buying luxury items", "Shopping only on weekends"],
-            correctAnswer: 1
-          },
-          {
-            question: "Which of these is an example of reducing your 'carbon footprint'?",
-            options: ["Driving a large SUV alone", "Leaving lights on in empty rooms", "Walking or biking instead of driving", "Using disposable water bottles"],
-            correctAnswer: 2
-          }
-        ]
-      },
-      isCompleted: false,
-      progress: 0
-    },
-    {
-      id: 5,
-      title: "Ocean Conservation and Marine Life",
-      description: "Understanding marine ecosystems, ocean pollution, and conservation efforts to protect our blue planet.",
-      image: "https://images.pexels.com/photos/1001682/pexels-photo-1001682.jpeg?w=400&h=300&fit=crop",
-      duration: 6,
-      difficulty: "intermediate",
-      category: "conservation",
-      tags: ["marine life", "ocean pollution", "coral reefs"],
-      enrolledCount: 9850,
-      rating: 4.8,
-      xpReward: 120,
-      thumbnail: "https://images.pexels.com/photos/1001682/pexels-photo-1001682.jpeg?w=400&h=300&fit=crop",
-      audioUrl: "https://cdn.pixabay.com/audio/2022/08/04/audio_2dde649953.mp3",
-      sections: [
-        {
-          title: "The Problem of Plastic Pollution",
-          content: "Millions of tons of plastic enter our oceans every year, harming marine life and ecosystems. Microplastics, tiny plastic particles, are now found in everything from sea salt to drinking water. Reducing single-use plastics is a critical first step.",
-          duration: 90
-        },
-        {
-          title: "Protecting Coral Reefs",
-          content: "Coral reefs are vital marine habitats, but they are threatened by warming oceans (coral bleaching) and pollution. Using reef-safe sunscreen and supporting sustainable tourism are ways you can help protect these fragile ecosystems.",
-          duration: 90
-        },
-        {
-          title: "Sustainable Seafood Choices",
-          content: "Overfishing is a major threat to ocean health. When you buy seafood, look for certifications like the Marine Stewardship Council (MSC) label, which indicates that the fish was sourced sustainably. This helps protect fish populations for the future.",
-          duration: 90
-        },
-        {
-          title: "Coastal Cleanups",
-          content: "Participating in or organizing a local beach or river cleanup is a direct way to prevent trash from entering our oceans. Every piece of litter removed makes a difference for marine animals and the health of our waterways.",
-          duration: 90
-        }
-      ],
-      quiz: {
-        id: 5,
-        title: "Ocean Conservation Quiz",
-        xpReward: 120,
-        questions: [
-          {
-            question: "What is the main cause of coral bleaching?",
-            options: ["Too many fish", "Loud noises from boats", "Warming ocean temperatures", "Darkness from solar eclipses"],
-            correctAnswer: 2
-          },
-          {
-            question: "What are microplastics?",
-            options: ["A brand of small toys", "Plastics that are easy to see", "Tiny plastic particles that pollute the environment", "A type of biodegradable plastic"],
-            correctAnswer: 2
-          },
-          {
-            question: "What does the MSC (Marine Stewardship Council) label on seafood indicate?",
-            options: ["The seafood is the most expensive", "The seafood was caught locally", "The seafood was sourced sustainably", "The seafood is imported"],
-            correctAnswer: 2
-          }
-        ]
-      },
-      isCompleted: false,
-      progress: 0
-    },
-    {
-      id: 6,
-      title: "Environmental Policy and Governance",
-      description: "Explore how environmental policies are created, implemented, and their impact on global sustainability efforts.",
-      image: "https://images.pixabay.com/photo/2016/11/27/21/42/stock-1863880_1280.jpg?w=400&h=300&fit=crop",
-      duration: 9,
-      difficulty: "expert",
-      category: "policy",
-      tags: ["environmental law", "policy making", "governance"],
-      enrolledCount: 5420,
-      rating: 4.9,
-      xpReward: 250,
-      thumbnail: "https://images.pixabay.com/photo/2016/11/27/21/42/stock-1863880_1280.jpg?w=400&h=300&fit=crop",
-      audioUrl: "https://cdn.pixabay.com/audio/2022/12/16/audio_83181b737e.mp3",
-      sections: [
-        {
-          title: "The Role of Government",
-          content: "Governments create environmental regulations, such as limits on pollution from factories or standards for vehicle emissions. They also sign international treaties, like the Paris Agreement, to address global issues like climate change.",
-          duration: 135
-        },
-        {
-          title: "Market-Based Solutions",
-          content: "Policies like carbon taxes (which make polluters pay for their emissions) and cap-and-trade systems (which create a market for emission permits) use economic incentives to encourage businesses to reduce their environmental impact.",
-          duration: 135
-        },
-        {
-          title: "The Power of Advocacy",
-          content: "Non-governmental organizations (NGOs) and citizen groups play a crucial role in advocating for stronger environmental laws. They raise public awareness, lobby politicians, and hold corporations accountable for their environmental performance.",
-          duration: 135
-        },
-        {
-          title: "Your Voice Matters",
-          content: "As a citizen, you can influence policy by voting for candidates with strong environmental platforms, contacting your elected officials, and supporting organizations that work on environmental issues. Collective action can lead to significant policy change.",
-          duration: 135
-        }
-      ],
-      quiz: {
-        id: 6,
-        title: "Environmental Policy Quiz",
-        xpReward: 250,
-        questions: [
-          {
-            question: "What is a 'carbon tax'?",
-            options: ["A tax on all carbon-based life forms", "A fee paid by consumers for using electricity", "A tax levied on the carbon content of fuels", "A reward for planting trees"],
-            correctAnswer: 2
-          },
-          {
-            question: "What is the primary goal of the Paris Agreement?",
-            options: ["To eliminate all pollution by 2030", "To protect endangered species", "To limit global warming and reduce greenhouse gas emissions", "To fund renewable energy research only"],
-            correctAnswer: 2
-          },
-          {
-            question: "What does NGO stand for in the context of environmentalism?",
-            options: ["New Green Order", "National Government Office", "Non-Governmental Organization", "No Gas Online"],
-            correctAnswer: 2
-          }
-        ]
-      },
-      isCompleted: false,
-      progress: 0
-    }
   ];
 
   // Mock data for learning paths
@@ -399,7 +156,7 @@ const LearningArena = () => {
     {
       id: 1,
       title: "Climate Action Hero",
-      description: "Master the science of climate change and become an advocate for climate action in your community.",
+      description: "Master climate science and become an advocate for change.",
       category: "climate",
       difficulty: "beginner",
       lessonCount: 12,
@@ -413,7 +170,7 @@ const LearningArena = () => {
     {
       id: 2,
       title: "Biodiversity Guardian",
-      description: "Learn to protect and preserve the incredible diversity of life on Earth through conservation strategies.",
+      description: "Learn to protect life on Earth through conservation strategies.",
       category: "biodiversity",
       difficulty: "intermediate",
       lessonCount: 15,
@@ -427,7 +184,7 @@ const LearningArena = () => {
     {
       id: 3,
       title: "Sustainable Innovation Leader",
-      description: "Develop expertise in sustainable technologies and lead the transition to a circular economy.",
+      description: "Develop expertise in green tech and the circular economy.",
       category: "sustainability",
       difficulty: "advanced",
       lessonCount: 18,
@@ -475,7 +232,7 @@ const LearningArena = () => {
     {
       id: 1,
       title: "The Future of Renewable Energy",
-      description: "Join Dr. Sarah Chen as she discusses breakthrough technologies in solar and wind energy, and their potential to revolutionize our energy systems. Learn about the latest innovations in energy storage, grid integration, and the economic factors driving the renewable energy transition.",
+      description: "Join Dr. Sarah Chen to discuss breakthrough technologies in solar and wind energy.",
       expert: {
         name: "Dr. Sarah Chen",
         title: "Renewable Energy Researcher",
@@ -491,44 +248,6 @@ const LearningArena = () => {
       xpReward: 150,
       coverImage: "https://images.pixabay.com/photo/2017/09/12/13/21/photovoltaic-system-2742304_1280.jpg?w=600&h=300&fit=crop"
     },
-    {
-      id: 2,
-      title: "Ocean Conservation in the 21st Century",
-      description: "Marine biologist Dr. James Rodriguez shares insights from his 20 years of research on coral reef conservation and marine ecosystem protection.",
-      expert: {
-        name: "Dr. James Rodriguez",
-        title: "Marine Biologist",
-        organization: "Ocean Conservation Institute",
-        avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face"
-      },
-      scheduledAt: "2024-09-18T18:00:00Z",
-      duration: 45,
-      status: "live",
-      attendeeCount: 189,
-      topics: ["Coral Reefs", "Marine Pollution", "Ocean Acidification", "Conservation Strategies"],
-      rating: 4.8,
-      xpReward: 120,
-      coverImage: "https://images.pexels.com/photos/1001682/pexels-photo-1001682.jpeg?w=600&h=300&fit=crop"
-    },
-    {
-      id: 3,
-      title: "Climate Policy and Global Action",
-      description: "Environmental policy expert Dr. Maria Santos discusses international climate agreements and their implementation challenges.",
-      expert: {
-        name: "Dr. Maria Santos",
-        title: "Environmental Policy Analyst",
-        organization: "UN Environment Programme",
-        avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face"
-      },
-      scheduledAt: "2024-09-15T14:00:00Z",
-      duration: 50,
-      status: "completed",
-      attendeeCount: 312,
-      topics: ["Paris Agreement", "Carbon Pricing", "Policy Implementation", "International Cooperation"],
-      rating: 4.7,
-      xpReward: 140,
-      coverImage: "https://images.unsplash.com/photo-1569163139394-de4e4f43e4e3?w=600&h=300&fit=crop"
-    }
   ];
 
   // Mock user progress data
@@ -554,41 +273,6 @@ const LearningArena = () => {
     ]
   };
 
-  // Mock quiz data
-  const sampleQuiz = {
-    id: 1,
-    title: "Climate Change Quiz",
-    xpReward: 100,
-    questions: [
-      {
-        question: "What is the main cause of current climate change?",
-        options: [
-          "Natural climate cycles",
-          "Human activities releasing greenhouse gases",
-          "Solar radiation changes",
-          "Volcanic eruptions"
-        ],
-        correctAnswer: 1,
-        image: "https://images.unsplash.com/photo-1569163139394-de4e4f43e4e3?w=400&h=200&fit=crop"
-      },
-      {
-        question: "Which gas contributes most to the greenhouse effect?",
-        options: ["Carbon Dioxide", "Methane", "Water Vapor", "Nitrous Oxide"],
-        correctAnswer: 2
-      },
-      {
-        question: "What is the Paris Agreement\'s main goal?",
-        options: [
-          "Eliminate all fossil fuels by 2030",
-          "Limit global warming to well below 2°C",
-          "Plant 1 trillion trees",
-          "Ban single-use plastics"
-        ],
-        correctAnswer: 1
-      }
-    ]
-  };
-
   const categoryOptions = [
     { value: 'all', label: 'All Categories' },
     { value: 'climate', label: 'Climate Science' },
@@ -611,6 +295,7 @@ const LearningArena = () => {
     { id: 'lessons', label: 'Lessons', icon: 'BookOpen' },
     { id: 'paths', label: 'Learning Paths', icon: 'Route' },
     { id: 'challenges', label: 'Challenges', icon: 'Zap' },
+    { id: 'mini-games', label: 'Mini Games', icon: 'Gamepad2' },
     { id: 'experts', label: 'Expert Sessions', icon: 'Users' },
     { id: 'progress', label: 'My Progress', icon: 'TrendingUp' }
   ];
@@ -895,6 +580,8 @@ const LearningArena = () => {
               </div>
             </div>
           )}
+
+          {activeTab === 'mini-games' && <MiniGames />}
 
           {activeTab === 'experts' && (
             <div>
