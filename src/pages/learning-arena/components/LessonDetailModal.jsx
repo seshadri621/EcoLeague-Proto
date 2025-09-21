@@ -6,6 +6,7 @@ import Flashcard from './Flashcard';
 const LessonDetailModal = ({ isOpen, onClose, onStartQuiz, lesson }) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [progress, setProgress] = useState(0);
+  const [volume, setVolume] = useState(1);
   const audioRef = useRef(null);
 
   const togglePlay = () => {
@@ -15,6 +16,12 @@ const LessonDetailModal = ({ isOpen, onClose, onStartQuiz, lesson }) => {
       audioRef.current.play();
     }
     setIsPlaying(!isPlaying);
+  };
+
+  const handleVolumeChange = (e) => {
+    const newVolume = e.target.value;
+    setVolume(newVolume);
+    audioRef.current.volume = newVolume;
   };
 
   useEffect(() => {
@@ -64,6 +71,38 @@ const LessonDetailModal = ({ isOpen, onClose, onStartQuiz, lesson }) => {
           </button>
         </div>
 
+        {/* Audio Player */}
+        <div className="p-6 border-b border-border bg-muted/30 flex items-center gap-4">
+          <button
+            onClick={togglePlay}
+            className="w-12 h-12 bg-forest rounded-full flex items-center justify-center text-white organic-transition hover:bg-green-700 flex-shrink-0"
+          >
+            <Icon name={isPlaying ? 'Pause' : 'Play'} size={20} />
+          </button>
+          <div className="flex-1">
+            <div className="flex items-center justify-between">
+                <p className="text-sm font-medium text-text-primary">Listen to the lesson</p>
+                <div className="flex items-center space-x-2">
+                    <Icon name={volume > 0 ? "Volume2" : "VolumeX"} size={16} className="text-text-secondary" />
+                    <input 
+                        type="range" 
+                        min="0" 
+                        max="1" 
+                        step="0.01" 
+                        value={volume}
+                        onChange={handleVolumeChange} 
+                        className="w-24 h-1 bg-border rounded-full appearance-none cursor-pointer accent-forest"/>
+                </div>
+            </div>
+            <div className="w-full bg-border rounded-full h-1.5 mt-2">
+              <div
+                className="bg-forest h-1.5 rounded-full organic-transition"
+                style={{ width: `${progress || 0}%` }}
+              ></div>
+            </div>
+          </div>
+        </div>
+
         {/* Content */}
         <div className="flex-1 overflow-y-auto custom-scrollbar">
           <div className="p-8">
@@ -100,30 +139,9 @@ const LessonDetailModal = ({ isOpen, onClose, onStartQuiz, lesson }) => {
         </div>
 
         {/* Footer */}
-        <div className="p-6 border-t border-border bg-muted/30 flex justify-between items-center gap-4">
-          {/* Audio Player */}
-          <div className="flex items-center space-x-3 flex-1">
-            <button
-              onClick={togglePlay}
-              className="w-10 h-10 bg-forest rounded-full flex items-center justify-center text-white organic-transition hover:bg-green-700 flex-shrink-0"
-            >
-              <Icon name={isPlaying ? 'Pause' : 'Play'} size={16} />
-            </button>
-            <div className="flex-1">
-              <p className="text-xs text-text-secondary font-medium">Listen to the lesson</p>
-              <div className="w-full bg-border rounded-full h-1.5 mt-1">
-                <div
-                  className="bg-forest h-1.5 rounded-full organic-transition"
-                  style={{ width: `${progress || 0}%` }}
-                ></div>
-              </div>
-            </div>
-          </div>
-
-          {/* Action Buttons */}
-          <div className="flex items-center gap-4">
-            <audio ref={audioRef} src={lesson.audioUrl} className="hidden" />
-            <Button
+        <div className="p-6 border-t border-border bg-muted/30 flex justify-end items-center gap-4">
+          <audio ref={audioRef} src={lesson.audioUrl} className="hidden" />
+          <Button
             variant="outline"
             onClick={onClose}
           >
@@ -137,7 +155,6 @@ const LessonDetailModal = ({ isOpen, onClose, onStartQuiz, lesson }) => {
           >
             Start Quiz
           </Button>
-          </div>
         </div>
       </div>
     </div>
