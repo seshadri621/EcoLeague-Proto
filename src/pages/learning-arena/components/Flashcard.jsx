@@ -1,21 +1,25 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import Icon from '../../../components/AppIcon';
+import './Flashcard.css'; // Import the new CSS file
 
 const Flashcard = ({ section }) => {
   const [isFlipped, setIsFlipped] = useState(false);
+  const audioRef = useRef(null);
 
   const handleFlip = () => {
+    if (audioRef.current) {
+      audioRef.current.currentTime = 0;
+      audioRef.current.play();
+    }
     setIsFlipped(!isFlipped);
   };
 
   return (
-    <div className="perspective-1000 mb-6">
-      <div
-        className={`relative w-full h-64 transform-style-3d transition-transform duration-700 ${isFlipped ? 'rotate-y-180' : ''}`}
-        onClick={handleFlip}
-      >
+    <div className="flashcard-container mb-6" onClick={handleFlip}>
+      <audio ref={audioRef} src="/audio/flip.mp3" preload="auto"></audio>
+      <div className={`flashcard ${isFlipped ? 'is-flipped' : ''}`}>
         {/* Front of the card */}
-        <div className="absolute w-full h-full backface-hidden bg-forest-gradient/20 border-2 border-forest/30 rounded-eco-lg p-6 flex flex-col justify-center items-center text-center cursor-pointer">
+        <div className="card-face card-front">
           <Icon name="BookOpen" size={32} className="text-forest mb-4" />
           <h3 className="font-headline font-bold text-xl text-forest">
             {section.title}
@@ -24,12 +28,15 @@ const Flashcard = ({ section }) => {
         </div>
 
         {/* Back of the card */}
-        <div className="absolute w-full h-full backface-hidden bg-white border border-border rounded-eco-lg p-6 flex flex-col justify-between rotate-y-180">
-          <div>
-            <h4 className="font-headline font-semibold text-lg text-text-primary mb-3">{section.title}</h4>
-            <p className="font-body text-text-secondary text-sm leading-relaxed">
-              {section.content}
-            </p>
+        <div className="card-face card-back">
+          <div className="w-full h-full flex flex-col justify-between text-left">
+            <div>
+              <h4 className="font-headline font-semibold text-lg text-text-primary mb-3">{section.title}</h4>
+              <p className="font-body text-text-secondary text-sm leading-relaxed">
+                {section.content}
+              </p>
+            </div>
+            <p className="text-xs text-text-tertiary mt-4 text-center">Click to flip back</p>
           </div>
         </div>
       </div>
