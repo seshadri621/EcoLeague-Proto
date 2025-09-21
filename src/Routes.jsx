@@ -12,6 +12,7 @@ const QuestMap = lazy(() => import('./pages/quest-map'));
 const LearningArena = lazy(() => import('./pages/learning-arena'));
 const MissionControlDashboard = lazy(() => import('./pages/mission-control-dashboard'));
 const CommunityImpactHub = lazy(() => import('./pages/community-impact-hub'));
+const NgoList = lazy(() => import('./pages/NgoList'));
 const Profile = lazy(() => import('./pages/Profile'));
 const Settings = lazy(() => import('./pages/Settings'));
 const ForgotPassword = lazy(() => import("./pages/ForgotPassword"));
@@ -40,6 +41,7 @@ const Routes = () => {
               <Route path="/quest-map" element={<QuestMap />} />
               <Route path="/learning-arena" element={<LearningArena />} />
               <Route path="/community-impact-hub" element={<CommunityImpactHub />} />
+              <Route path="/ngo-list" element={<NgoList />} />
               <Route path="/profile" element={<Profile />} />
               <Route path="/settings" element={<Settings />} />
             </Route>

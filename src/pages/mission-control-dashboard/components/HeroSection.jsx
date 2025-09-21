@@ -55,13 +55,13 @@ const HeroSection = ({ user, onStartQuest }) => {
             {/* Welcome Content */}
             <div className="space-y-6">
               <div className="space-y-2">
-                <p className="text-text-secondary font-body">
+                <p className="text-gray-600 font-body">
                   {getGreeting()}, Environmental Hero
                 </p>
-                <h1 className="text-3xl lg:text-4xl xl:text-5xl font-headline font-bold text-gradient-forest">
+                <h1 className="text-3xl lg:text-4xl xl:text-5xl font-headline font-bold text-green-700">
                   Welcome to Your Mission Control
                 </h1>
-                <p className="text-lg text-text-secondary font-body leading-relaxed">
+                <p className="text-lg text-gray-800 font-body leading-relaxed">
                   Your personalized command center for environmental impact. Track your progress, discover new quests, and connect with fellow eco-heroes making a difference worldwide.
                 </p>
               </div>
@@ -125,8 +125,8 @@ const HeroSection = ({ user, onStartQuest }) => {
             <div className="relative">
               <div className="bg-white rounded-eco-lg shadow-eco-md border border-border p-6">
                 <div className="flex items-center justify-between mb-4">
-                  <h3 className="font-headline font-semibold text-forest">Live Mission Activity</h3>
-                  <div className="flex items-center space-x-2 text-sm text-text-secondary">
+                  <h3 className="font-headline font-semibold text-green-700">Live Mission Activity</h3>
+                  <div className="flex items-center space-x-2 text-sm text-gray-600">
                     <div className="w-2 h-2 bg-success rounded-full animate-pulse"></div>
                     <span className="font-body">Live</span>
                   </div>
@@ -175,19 +175,19 @@ const HeroSection = ({ user, onStartQuest }) => {
 
                   {/* Map Legend */}
                   <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm rounded-eco-sm p-3 space-y-2">
-                    <h4 className="text-xs font-headline font-semibold text-forest">Mission Types</h4>
+                    <h4 className="text-xs font-headline font-semibold text-green-700">Mission Types</h4>
                     <div className="space-y-1">
                       <div className="flex items-center space-x-2 text-xs">
                         <div className="w-2 h-2 bg-achievement rounded-full"></div>
-                        <span className="font-body text-text-secondary">Active Missions</span>
+                        <span className="font-body text-gray-800">Active Missions</span>
                       </div>
                       <div className="flex items-center space-x-2 text-xs">
-                        <Icon name="Trash2" size={10} className="text-text-secondary" />
-                        <span className="font-body text-text-secondary">Cleanup</span>
+                        <Icon name="Trash2" size={10} className="text-gray-800" />
+                        <span className="font-body text-gray-800">Cleanup</span>
                       </div>
                       <div className="flex items-center space-x-2 text-xs">
-                        <Icon name="TreePine" size={10} className="text-text-secondary" />
-                        <span className="font-body text-text-secondary">Planting</span>
+                        <Icon name="TreePine" size={10} className="text-gray-800" />
+                        <span className="font-body text-gray-800">Planting</span>
                       </div>
                     </div>
                   </div>
@@ -195,7 +195,7 @@ const HeroSection = ({ user, onStartQuest }) => {
 
                 {/* Map Actions */}
                 <div className="flex items-center justify-between mt-4">
-                  <p className="text-sm text-text-secondary font-body">
+                  <p className="text-sm text-gray-600 font-body">
                     <span className="font-semibold text-achievement">{activeHotspots?.length}</span> active mission zones
                   </p>
                   <Button variant="ghost" size="sm" iconName="ExternalLink" iconPosition="right" asChild>

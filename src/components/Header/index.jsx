@@ -2,7 +2,7 @@ import React from 'react';
 import { useAuth } from '../../contexts/AuthContext';
 import { auth } from '../../firebase';
 import { signOut } from 'firebase/auth';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import './Header.css';
 
 const Header = () => {
@@ -22,8 +22,16 @@ const Header = () => {
     <header className="header">
       <div className="header-container">
         <div className="logo">
-          <p>EcoLeague</p>
+          <Link to="/">EcoLeague</Link>
         </div>
+        <nav>
+          <Link to="/mission-control-dashboard">Dashboard</Link>
+          <Link to="/quest-map">Quest Map</Link>
+          <Link to="/learning-arena">Learning Arena</Link>
+          <Link to="/community-impact-hub">Community Hub</Link>
+          <Link to="/achievement-gallery">Achievements</Link>
+          <Link to="/ngo-list">NGOs</Link>
+        </nav>
         <div className="user-info">
           {currentUser ? (
             <>
@@ -31,7 +39,10 @@ const Header = () => {
               <button onClick={handleLogout} className="logout-btn">Logout</button>
             </>
           ) : (
-            <p>Guest</p>
+            <>
+              <Link to="/login">Login</Link>
+              <Link to="/signup">Sign Up</Link>
+            </>
           )}
         </div>
       </div>
