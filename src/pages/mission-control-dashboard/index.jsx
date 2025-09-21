@@ -211,6 +211,24 @@ const MissionControlDashboard = () => {
     // Handle social sharing
   };
 
+  const handleOpinionSubmit = (opinion) => {
+    const newOpinion = {
+      id: communityActivities.length + 1,
+      type: 'opinion',
+      user: {
+        name: user.name,
+        level: `Level ${user.level}`,
+        avatar: user.avatar
+      },
+      content: opinion.opinion,
+      timestamp: new Date(),
+      likes: 0,
+      shares: 0,
+      isLiked: false
+    };
+    setCommunityActivities([newOpinion, ...communityActivities]);
+  };
+
   const handleStreakClaim = (newStreak) => {
     setUser(prev => ({
       ...prev,
@@ -269,6 +287,7 @@ const MissionControlDashboard = () => {
           activities={communityActivities}
           onActivityLike={handleActivityLike}
           onActivityShare={handleActivityShare}
+          onOpinionSubmit={handleOpinionSubmit}
         />
         
         <StreakCounterSection 

@@ -3,16 +3,19 @@ import { Link } from 'react-router-dom';
 import Icon from '../../../components/AppIcon';
 import Image from '../../../components/AppImage';
 import Button from '../../../components/ui/Button';
+import AddOpinionModal from './AddOpinionModal'; // Import the new modal
 
-const CommunityPulseSection = ({ activities, onActivityLike, onActivityShare }) => {
+const CommunityPulseSection = ({ activities, onActivityLike, onActivityShare, onOpinionSubmit }) => {
   const [selectedFilter, setSelectedFilter] = useState('all');
   const [filteredActivities, setFilteredActivities] = useState(activities);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const filters = [
     { id: 'all', label: 'All Activity', icon: 'Activity' },
     { id: 'achievements', label: 'Achievements', icon: 'Award' },
     { id: 'missions', label: 'Missions', icon: 'Target' },
-    { id: 'discussions', label: 'Discussions', icon: 'MessageCircle' }
+    { id: 'discussions', label: 'Discussions', icon: 'MessageCircle' },
+    { id: 'opinions', label: 'Opinions', icon: 'FileText' }
   ];
 
   useEffect(() => {
@@ -29,6 +32,7 @@ const CommunityPulseSection = ({ activities, onActivityLike, onActivityShare }) 
       case 'mission': return 'Target';
       case 'discussion': return 'MessageCircle';
       case 'lesson': return 'BookOpen';
+      case 'opinion': return 'FileText';
       default: return 'Activity';
     }
   };
@@ -39,6 +43,7 @@ const CommunityPulseSection = ({ activities, onActivityLike, onActivityShare }) 
       case 'mission': return 'text-forest';
       case 'discussion': return 'text-ocean';
       case 'lesson': return 'text-success';
+      case 'opinion': return 'text-primary';
       default: return 'text-text-secondary';
     }
   };
@@ -67,9 +72,14 @@ const CommunityPulseSection = ({ activities, onActivityLike, onActivityShare }) 
               Recent achievements and activities from your eco-hero community
             </p>
           </div>
-          <Button variant="outline" iconName="Users" iconPosition="left" asChild>
-            <Link to="/community-impact-hub">Join Community</Link>
-          </Button>
+          <div className="flex items-center space-x-2">
+            <Button variant="outline" iconName="Users" iconPosition="left" asChild>
+              <Link to="/community-impact-hub">Join Community</Link>
+            </Button>
+            <Button variant="default" iconName="Plus" iconPosition="left" onClick={() => setIsModalOpen(true)}>
+              Add Opinion
+            </Button>
+          </div>
         </div>
 
         {/* Activity Filters */}
@@ -108,7 +118,8 @@ const CommunityPulseSection = ({ activities, onActivityLike, onActivityShare }) 
                   <div className={`absolute -bottom-1 -right-1 w-4 h-4 rounded-full flex items-center justify-center ${
                     activity?.type === 'achievement' ? 'bg-achievement' :
                     activity?.type === 'mission' ? 'bg-forest' :
-                    activity?.type === 'discussion' ? 'bg-ocean' : 'bg-success'
+                    activity?.type === 'discussion' ? 'bg-ocean' : 
+                    activity?.type === 'opinion' ? 'bg-primary' : 'bg-success'
                   }`}>
                     <Icon 
                       name={getActivityIcon(activity?.type)} 
@@ -225,8 +236,8 @@ const CommunityPulseSection = ({ activities, onActivityLike, onActivityShare }) 
             <p className="text-text-secondary font-body mb-6 max-w-md mx-auto">
               Be the first to share your environmental achievements with the community!
             </p>
-            <Button variant="default" iconName="Plus" iconPosition="left" asChild>
-              <Link to="/community-impact-hub">Share Your Impact</Link>
+            <Button variant="default" iconName="Plus" iconPosition="left" onClick={() => setIsModalOpen(true)}>
+                Share Your Opinion
             </Button>
           </div>
         )}
@@ -239,6 +250,12 @@ const CommunityPulseSection = ({ activities, onActivityLike, onActivityShare }) 
             </Button>
           </div>
         )}
+
+        <AddOpinionModal 
+          isOpen={isModalOpen} 
+          onClose={() => setIsModalOpen(false)} 
+          onSubmit={onOpinionSubmit} 
+        />
       </div>
     </section>
   );
